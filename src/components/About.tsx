@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, GridLegacy as Grid, Typography, Paper } from '@mui/material';
+import { Box, Container, Grid, Typography, Paper } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
 import SchoolIcon from '@mui/icons-material/School';
 import PsychologyIcon from '@mui/icons-material/Psychology'; // For philosophy/ethics
@@ -52,7 +52,7 @@ const About: React.FC = () => {
 
                 <Grid container spacing={4}>
                     {assets.map((item, index) => (
-                        <Grid item xs={12} sm={6} md={2.4} key={index}>
+                        <Grid size={{ xs: 12, sm: 6, md: 2.4 }} key={index}>
                             <Paper elevation={0} sx={{ p: 2, textAlign: 'center', bgcolor: 'transparent' }}>
                                 {item.icon}
                                 <Typography variant="h6" gutterBottom sx={{ fontSize: '110%', mb: 2 }}>{item.title}</Typography>

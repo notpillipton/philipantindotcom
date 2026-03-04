@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Container, GridLegacy as Grid, Typography, TextField, Button, Checkbox, FormControlLabel, MenuItem, Select, FormControl, Alert, Snackbar, type SelectChangeEvent } from '@mui/material';
+import { Box, Container, Grid, Typography, TextField, Button, Checkbox, FormControlLabel, MenuItem, Select, FormControl, Alert, Snackbar, type SelectChangeEvent } from '@mui/material';
 
 const Contact: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -87,10 +87,10 @@ const Contact: React.FC = () => {
 
                 <form onSubmit={handleSubmit}>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} sm={4}>
+                        <Grid size={{ xs: 12, sm: 4 }}>
                             <Typography sx={{ mt: 2 }}>Name</Typography>
                         </Grid>
-                        <Grid item xs={12} sm={8}>
+                        <Grid size={{ xs: 12, sm: 8 }}>
                             <TextField
                                 fullWidth
                                 name="name"
@@ -101,10 +101,10 @@ const Contact: React.FC = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12} sm={4}>
+                        <Grid size={{ xs: 12, sm: 4 }}>
                             <Typography sx={{ mt: 2 }}>Email</Typography>
                         </Grid>
-                        <Grid item xs={12} sm={8}>
+                        <Grid size={{ xs: 12, sm: 8 }}>
                             <TextField
                                 fullWidth
                                 name="email"
@@ -116,10 +116,10 @@ const Contact: React.FC = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12} sm={4}>
+                        <Grid size={{ xs: 12, sm: 4 }}>
                             <Typography sx={{ mt: 2 }}>How did you find this site?</Typography>
                         </Grid>
-                        <Grid item xs={12} sm={8}>
+                        <Grid size={{ xs: 12, sm: 8 }}>
                             <FormControl fullWidth>
                                 <Select
                                     name="findUs"
@@ -135,10 +135,10 @@ const Contact: React.FC = () => {
                             </FormControl>
                         </Grid>
 
-                        <Grid item xs={12} sm={4}>
+                        <Grid size={{ xs: 12, sm: 4 }}>
                             <Typography sx={{ mt: 1 }}>Follow-up requested?</Typography>
                         </Grid>
-                        <Grid item xs={12} sm={8}>
+                        <Grid size={{ xs: 12, sm: 8 }}>
                             <FormControlLabel
                                 control={
                                     <Checkbox
@@ -151,10 +151,10 @@ const Contact: React.FC = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12} sm={4}>
+                        <Grid size={{ xs: 12, sm: 4 }}>
                             <Typography sx={{ mt: 2 }}>Drop Philip a line</Typography>
                         </Grid>
-                        <Grid item xs={12} sm={8}>
+                        <Grid size={{ xs: 12, sm: 8 }}>
                             <TextField
                                 fullWidth
                                 multiline
@@ -167,10 +167,10 @@ const Contact: React.FC = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12} sm={4}>
+                        <Grid size={{ xs: 12, sm: 4 }}>
                             <Typography sx={{ mt: 2 }}>Anti-bot: Spell Philip's last name, backwards, ALL CAPS</Typography>
                         </Grid>
-                        <Grid item xs={12} sm={8}>
+                        <Grid size={{ xs: 12, sm: 8 }}>
                             <TextField
                                 fullWidth
                                 name="passphrase"
@@ -181,8 +181,8 @@ const Contact: React.FC = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12} sm={4} />
-                        <Grid item xs={12} sm={8}>
+                        <Grid size={{ xs: 12, sm: 4 }} />
+                        <Grid size={{ xs: 12, sm: 8 }}>
                             <Button type="submit" variant="contained" color="primary" size="large">
                                 Send it!
                             </Button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, GridLegacy as Grid, Typography, Card, CardContent, CardMedia, CardActionArea, Chip } from '@mui/material';
+import { Box, Container, Grid, Typography, Card, CardContent, CardMedia, CardActionArea, Chip } from '@mui/material';
 
 const projects = [
     {
@@ -48,13 +48,13 @@ const Projects: React.FC = () => {
                 </Box>
 
                 <Grid container spacing={4} alignItems="center">
-                    <Grid item xs={12} md={4}>
+                    <Grid size={{ xs: 12, md: 4 }}>
                         <img src="/img/devices.gif" alt="Various screens for software development" style={{ width: '100%', maxWidth: '400px', display: 'block', margin: '0 auto' }} />
                     </Grid>
-                    <Grid item xs={12} md={8}>
+                    <Grid size={{ xs: 12, md: 8 }}>
                         <Grid container spacing={2}>
                             {projects.map((project, index) => (
-                                <Grid item xs={12} sm={6} key={index}>
+                                <Grid size={{ xs: 12, sm: 6 }} key={index}>
                                     <Card elevation={1} sx={{ display: 'flex', height: '100%', p: 1 }}>
                                         <CardActionArea
                                             {...(project.link ? { href: project.link } : {})}

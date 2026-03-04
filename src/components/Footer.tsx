@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, GridLegacy as Grid, Link, Typography, List, ListItem } from '@mui/material';
+import { Box, Container, Grid, Link, Typography, List, ListItem } from '@mui/material';
 
 const Footer: React.FC = () => {
     const scrollToSection = (id: string) => {
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         <Box component="footer" sx={{ bgcolor: '#333', color: '#888', py: 6 }}>
             <Container maxWidth="lg">
                 <Grid container spacing={4}>
-                    <Grid item xs={12} md={6}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <List sx={{ display: 'flex', flexDirection: 'row', padding: 0 }}>
                             {['About Philip', 'Projects', 'Updates', 'Contact Philip'].map((text, index) => {
                                 const targets = ['bio', 'projects', 'updates', 'contact'];

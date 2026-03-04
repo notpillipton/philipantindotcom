@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, GridLegacy as Grid, Typography, Paper, Link } from '@mui/material';
+import { Box, Container, Grid, Typography, Paper, Link } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import StarIcon from '@mui/icons-material/Star';
 
@@ -49,7 +49,7 @@ const Updates: React.FC = () => {
 
                 <Grid container spacing={4}>
                     {updates.map((update, index) => (
-                        <Grid item xs={12} sm={6} md={3} key={index}>
+                        <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
                             <Paper sx={{ p: 2, textAlign: 'center', height: '100%', borderRadius: 2 }}>
                                 <img src={update.image} alt={update.title} style={{ width: 'auto', height: 100, marginBottom: 15, borderRadius: 5 }} />
                                 <Typography variant="h6" gutterBottom color="primary">{update.title}</Typography>
