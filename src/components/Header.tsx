@@ -6,9 +6,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const navItems = [
     { label: 'About Philip', target: 'bio' },
-    // { label: 'Current Projects', target: 'projects' },
-    // { label: 'Recent Updates', target: 'updates' },
-    { label: 'Contact Philip', target: 'contact' }
+    { label: 'Contact Philip', target: 'contact' },
+    { label: 'Time Warp', target: 'past' }
 ];
 
 function HideOnScroll(props: { children: React.ReactElement }) {
