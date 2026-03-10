@@ -62,7 +62,7 @@ const Header: React.FC = () => {
                 {navItems.map((item) => (
                     <ListItem key={item.target} disablePadding>
                         <Button onClick={() => scrollToSection(item.target)} sx={{ textAlign: 'center', width: '100%', color: 'text.primary' }}>
-                            <ListItemText primary={item.label} primaryTypographyProps={{ fontFamily: 'Ubuntu' }} />
+                            <ListItemText primary={item.label} slotProps={{ primary: { sx: { fontFamily: 'Ubuntu' } } }} />
                         </Button>
                     </ListItem>
                 ))}
