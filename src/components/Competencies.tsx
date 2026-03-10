@@ -3,46 +3,40 @@ import { Box, ImageList, ImageListItem, ImageListItemBar, useMediaQuery } from '
 
 const itemData = [
     {
-        img: '/img/comp1-min.jpg',
-        title: 'Application development and programming',
+        img: '/img/comp01.jpg',
+        title: 'Successfully developed, launched, improved, and maintained three major enterprise applications',
     },
     {
-        img: '/img/comp2.jpg',
-        title: 'Analytic philosophy, emphasizing formal logic and critical thinking',
+        img: '/img/comp02.jpg',
+        title: 'Guided coding standards, tooling, automated testing, DevOps, and UI security flows',
     },
     {
-        img: '/img/comp3-min.jpg',
-        title: 'Fine arts (vocal music and sculpture)',
+        img: '/img/comp03.jpg',
+        title: 'Collaborated on enterprise AI policies and adoption strategies',
     },
     {
-        img: '/img/comp4.jpg',
-        title: 'Teaching',
+        img: '/img/comp04.jpg',
+        title: 'Matured state management strategies alongside application complexity',
     },
     {
-        img: '/img/comp5.jpg',
-        title: 'Project design and maintenance',
+        img: '/img/comp05.jpg',
+        title: 'Developed and launched an enterprise mentoring program and forged highly effective teams',
     },
     {
-        img: '/img/comp6-min.jpg',
-        title: 'Public speaking and performance',
+        img: '/img/comp06.jpg',
+        title: 'Coached public speaking with ToastMasters and taught internal classes for developers',
     },
     {
-        img: '/img/comp7.jpg',
-        title: 'Research',
+        img: '/img/comp07.jpg',
+        title: 'Collaborated in an Agile enviornment with designers, product owners, and stakeholders',
     },
     {
-        img: '/img/comp8.jpg',
-        title: 'Release and update of applications',
+        img: '/img/comp08.jpg',
+        title: 'Pursued graduate studies in analytic philosophy and ethics',
     },
 ];
 
 const Competencies: React.FC = () => {
-    // Media query to control col number
-    // xs: 1, sm: 2, md: 4
-    // MUI ImageList cols prop
-
-    // We can't use hooks directly in styling props sometimes, but let's try responsive logic
-    // Actually basic ImageList is static cols usually, or we use `cols` prop.
 
     const isMobile = useMediaQuery('(max-width:600px)');
     const isTablet = useMediaQuery('(max-width:960px)');

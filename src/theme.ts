@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#e67e22', // Orange accent from original site
+            main: '#cc3300', // Orange accent from original site
             contrastText: '#fff',
         },
         secondary: {
