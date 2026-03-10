@@ -60,7 +60,7 @@ const theme = createTheme({
                 },
                 containedPrimary: {
                     '&:hover': {
-                        backgroundColor: '#cf6d17',
+                        backgroundColor: '#cc6b4b',
                     }
                 }
             }

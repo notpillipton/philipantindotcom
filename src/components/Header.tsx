@@ -8,7 +8,7 @@ const navItems = [
     { label: 'About Philip', target: 'bio' },
     // { label: 'Current Projects', target: 'projects' },
     // { label: 'Recent Updates', target: 'updates' },
-    // { label: 'Contact Philip', target: 'contact' },
+    { label: 'Contact Philip', target: 'contact' }
 ];
 
 function HideOnScroll(props: { children: React.ReactElement }) {
