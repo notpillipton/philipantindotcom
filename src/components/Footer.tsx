@@ -15,8 +15,8 @@ const Footer: React.FC = () => {
                 <Grid container spacing={4}>
                     <Grid size={{ xs: 12, md: 6 }}>
                         <List sx={{ display: 'flex', flexDirection: 'row', padding: 0 }}>
-                            {['About Philip', 'Projects', 'Updates', 'Contact Philip'].map((text, index) => {
-                                const targets = ['bio', 'projects', 'updates', 'contact'];
+                            {['About Philip', 'Contact Philip'].map((text, index) => {
+                                const targets = ['bio', 'contact'];
                                 return (
                                     <ListItem key={text} disablePadding sx={{ width: 'auto', mr: 3 }}>
                                         <Link
@@ -35,21 +35,6 @@ const Footer: React.FC = () => {
                                     </ListItem>
                                 );
                             })}
-                            <ListItem disablePadding sx={{ width: 'auto' }}>
-                                <Link
-                                    href="https://itunes.apple.com/us/developer/philip-antin/id1393861539?mt=8"
-                                    target="_blank"
-                                    underline="none"
-                                    sx={{
-                                        color: '#888',
-                                        '&:hover': { color: '#ddd' },
-                                        fontFamily: 'Ubuntu',
-                                        fontSize: '16px'
-                                    }}
-                                >
-                                    App Store
-                                </Link>
-                            </ListItem>
                         </List>
                     </Grid>
                 </Grid>

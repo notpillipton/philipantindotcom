@@ -63,7 +63,8 @@ const About: React.FC = () => {
                     <Button
                         variant="contained"
                         color="primary"
-                        href="/data/Antin Technical Leadership Resume - 2024-03.pdf"
+                        href="/data/Antin_Resume_Technical_Leadership_2026-03.pdf"
+                        download="Antin_Resume_Technical_Leadership_2026-03.pdf"
                         target="_blank"
                         startIcon={<DownloadIcon />}
                     >
