@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Container, Grid, Typography, TextField, Button, Checkbox, FormControlLabel, MenuItem, Select, FormControl, Alert, Snackbar, type SelectChangeEvent } from '@mui/material';
+import { Box, Container, Grid, Typography, TextField, Button, Checkbox, FormControlLabel, MenuItem, Select, FormControl, Alert, Snackbar, CircularProgress, type SelectChangeEvent } from '@mui/material';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const Contact: React.FC = () => {
     });
 
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [loading, setLoading] = useState(false);
     const [openSnackbar, setOpenSnackbar] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -37,7 +39,7 @@ const Contact: React.FC = () => {
         }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         // Validation
@@ -55,24 +57,41 @@ const Contact: React.FC = () => {
             return;
         }
 
-        // Simulate sending - Integration with EmailJS or similar service required here
-        // TODO: Implement actual email sending functionality.
-        // options:
-        // 1. EmailJS (https://www.emailjs.com/) - Frontend only, secure.
-        // 2. Formspree (https://formspree.io/) - Simple form backend.
-        // 3. Serverless function (AWS Lambda, Netlify Functions) to send via SES/SendGrid.
+        setLoading(true);
 
-        console.log('Form submitted:', formData);
-        setStatus('success');
-        setOpenSnackbar(true);
-        setFormData({
-            name: '',
-            email: '',
-            findUs: 'jobapp',
-            followup: true,
-            message: '',
-            passphrase: ''
-        });
+        try {
+            const templateParams = {
+                name: formData.name,
+                email: formData.email,
+                findUs: formData.findUs,
+                followup: formData.followup ? 'Yes' : 'No',
+                message: formData.message,
+            };
+
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                templateParams,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+
+            console.log('Form submitted successfully via EmailJS');
+            setStatus('success');
+            setFormData({
+                name: '',
+                email: '',
+                findUs: 'jobapp',
+                followup: true,
+                message: '',
+                passphrase: ''
+            });
+        } catch (error) {
+            console.error('Failed to send email:', error);
+            setStatus('error');
+        } finally {
+            setLoading(false);
+            setOpenSnackbar(true);
+        }
     };
 
     return (
@@ -183,8 +202,15 @@ const Contact: React.FC = () => {
 
                         <Grid size={{ xs: 12, sm: 4 }} />
                         <Grid size={{ xs: 12, sm: 8 }}>
-                            <Button type="submit" variant="contained" color="primary" size="large">
-                                Send it!
+                            <Button 
+                                type="submit" 
+                                variant="contained" 
+                                color="primary" 
+                                size="large"
+                                disabled={loading}
+                                startIcon={loading && <CircularProgress size={20} color="inherit" />}
+                            >
+                                {loading ? 'Sending...' : 'Send it!'}
                             </Button>
                         </Grid>
                     </Grid>

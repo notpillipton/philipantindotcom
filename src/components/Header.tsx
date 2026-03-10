@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Box, Typography, Button, Container, IconButton, Drawer, List, ListItem, ListItemText, useScrollTrigger, Slide } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
@@ -6,9 +6,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const navItems = [
     { label: 'About Philip', target: 'bio' },
-    { label: 'Current Projects', target: 'projects' },
-    { label: 'Recent Updates', target: 'updates' },
     { label: 'Contact Philip', target: 'contact' },
+    { label: 'Time Warp', target: 'past' }
 ];
 
 function HideOnScroll(props: { children: React.ReactElement }) {
@@ -26,6 +25,20 @@ const Header: React.FC = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [textIndex, setTextIndex] = useState(0);
+
+    const rotatingHeroText = [
+        "Programmer ~ Professor ~ Philosopher",
+        "Engineer ~ Educator ~ Ethicist"
+    ];
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setTextIndex((prevIndex) => (prevIndex + 1) % rotatingHeroText.length);
+        }, 5000);
+
+        return () => clearInterval(intervalId);
+    }, [rotatingHeroText.length]);
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -48,7 +61,7 @@ const Header: React.FC = () => {
                 {navItems.map((item) => (
                     <ListItem key={item.target} disablePadding>
                         <Button onClick={() => scrollToSection(item.target)} sx={{ textAlign: 'center', width: '100%', color: 'text.primary' }}>
-                            <ListItemText primary={item.label} primaryTypographyProps={{ fontFamily: 'Ubuntu' }} />
+                            <ListItemText primary={item.label} slotProps={{ primary: { sx: { fontFamily: 'Ubuntu' } } }} />
                         </Button>
                     </ListItem>
                 ))}
@@ -125,10 +138,10 @@ const Header: React.FC = () => {
             >
                 <Container>
                     <Typography variant="h1" sx={{ mb: 2, fontSize: { xs: '2.5rem', md: '4rem' } }}>
-                        Programmer. Professor. Philosopher.
+                        {rotatingHeroText[textIndex]}
                     </Typography>
                     <Typography variant="h5" sx={{ mb: 4, fontWeight: 300 }}>
-                        Applying pedagogy and critical thinking in software development.
+                        Enabling human competence in an increasingly intricate digital world.
                     </Typography>
                     <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
                         <Button
@@ -147,14 +160,14 @@ const Header: React.FC = () => {
                         >
                             Show me more
                         </Button>
-                        <Button
+                        {/* <Button
                             variant="outlined"
                             size="large"
                             sx={{ color: 'primary.main', borderColor: 'primary.main', borderWidth: 2, '&:hover': { borderWidth: 2, borderColor: '#cf6d17', color: '#cf6d17' } }}
                             onClick={() => scrollToSection('projects')}
                         >
                             Let me play
-                        </Button>
+                        </Button> */}
                     </Box>
                 </Container>
             </Box>
