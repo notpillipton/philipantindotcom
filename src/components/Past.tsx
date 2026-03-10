@@ -6,7 +6,16 @@ const Past: React.FC = () => {
     return (
         <Box component="section" id="past" sx={{ py: 8, bgcolor: '#ffffff' }}>
             <Container maxWidth="lg">
-                <Box sx={{ textAlign: 'center', mb: 6, width: { xs: '100%', md: '70%' }, mx: 'auto' }}>
+                <Box sx={{ 
+                    textAlign: 'center', 
+                    mb: 6, 
+                    width: { xs: '100%', md: '70%' }, 
+                    mx: 'auto',
+                    bgcolor: '#e8e8e8',
+                    p: { xs: 4, md: 8 },
+                    borderRadius: 2,
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                }}>
                     <Typography variant="h4" component="h3" gutterBottom sx={{ fontSize: '180%', textTransform: 'uppercase', mb: 2 }}>
                         "How it's going" vs. "How it started"
                     </Typography>
