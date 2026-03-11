@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Box, Typography, Button, Container, IconButton, Drawer
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import ContactForm from './ContactForm';
 
 const navItems = [
     { label: 'About Philip', target: 'bio' },
@@ -25,6 +26,7 @@ const Header: React.FC = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [contactOpen, setContactOpen] = useState(false);
     const [textIndex, setTextIndex] = useState(0);
 
     const rotatingHeroText = [
@@ -45,6 +47,11 @@ const Header: React.FC = () => {
     };
 
     const scrollToSection = (id: string) => {
+        if (id === 'contact') {
+            setContactOpen(true);
+            setMobileOpen(false);
+            return;
+        }
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -148,7 +155,7 @@ const Header: React.FC = () => {
                             variant="contained"
                             color="primary"
                             size="large"
-                            onClick={() => scrollToSection('contact')}
+                            onClick={() => setContactOpen(true)}
                         >
                             Get this guy on the line!
                         </Button>
@@ -160,17 +167,11 @@ const Header: React.FC = () => {
                         >
                             Show me more
                         </Button>
-                        {/* <Button
-                            variant="outlined"
-                            size="large"
-                            sx={{ color: 'primary.main', borderColor: 'primary.main', borderWidth: 2, '&:hover': { borderWidth: 2, borderColor: '#cf6d17', color: '#cf6d17' } }}
-                            onClick={() => scrollToSection('projects')}
-                        >
-                            Let me play
-                        </Button> */}
                     </Box>
                 </Container>
             </Box>
+
+            <ContactForm open={contactOpen} onClose={() => setContactOpen(false)} />
         </>
     );
 };
