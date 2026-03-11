@@ -3,7 +3,6 @@ import { AppBar, Toolbar, Box, Typography, Button, Container, IconButton, Drawer
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import ContactForm from './ContactForm';
 
 const navItems = [
     { label: 'About Philip', target: 'bio' },
@@ -22,11 +21,14 @@ function HideOnScroll(props: { children: React.ReactElement }) {
     );
 }
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    onOpenContact: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [contactOpen, setContactOpen] = useState(false);
     const [textIndex, setTextIndex] = useState(0);
 
     const rotatingHeroText = [
@@ -48,7 +50,7 @@ const Header: React.FC = () => {
 
     const scrollToSection = (id: string) => {
         if (id === 'contact') {
-            setContactOpen(true);
+            onOpenContact();
             setMobileOpen(false);
             return;
         }
@@ -155,7 +157,7 @@ const Header: React.FC = () => {
                             variant="contained"
                             color="primary"
                             size="large"
-                            onClick={() => setContactOpen(true)}
+                            onClick={onOpenContact}
                         >
                             Get this guy on the line!
                         </Button>
@@ -170,8 +172,6 @@ const Header: React.FC = () => {
                     </Box>
                 </Container>
             </Box>
-
-            <ContactForm open={contactOpen} onClose={() => setContactOpen(false)} />
         </>
     );
 };
