@@ -23,10 +23,10 @@ function App() {
           <>
             <About />
             <Contact onOpenContact={handleOpenContact} />
-            <Past />
           </>
         } />
         <Route path="/competencies" element={<Competencies />} />
+        <Route path="/past" element={<Past />} />
       </Routes>
       <Footer />
       <ContactForm open={contactOpen} onClose={handleCloseContact} />

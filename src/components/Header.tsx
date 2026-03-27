@@ -9,7 +9,7 @@ const navItems = [
     { label: 'About Philip', target: 'bio', isRoute: false },
     { label: 'Competencies', target: '/competencies', isRoute: true },
     { label: 'Contact Philip', target: 'contact', isRoute: false },
-    { label: 'Time Warp', target: 'past', isRoute: false }
+    { label: 'Time Warp', target: '/past', isRoute: true }
 ];
 
 function HideOnScroll(props: { children: React.ReactElement }) {

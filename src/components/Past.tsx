@@ -1,11 +1,27 @@
 import React from 'react';
 import { Box, Container, Typography, Button } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useNavigate } from 'react-router-dom';
 import HistoryIcon from '@mui/icons-material/History';
 
 const Past: React.FC = () => {
+    const navigate = useNavigate();
     return (
-        <Box component="section" id="past" sx={{ py: 8, bgcolor: '#ffffff' }}>
+        <Box component="section" id="past" sx={{ py: 8, bgcolor: '#ffffff', minHeight: '100vh', position: 'relative' }}>
             <Container maxWidth="lg">
+                <Button 
+                    startIcon={<ArrowBackIcon />} 
+                    onClick={() => navigate('/')}
+                    sx={{ 
+                        position: 'absolute', 
+                        top: 24, 
+                        left: 24,
+                        color: 'text.secondary',
+                        '&:hover': { color: 'primary.main' }
+                    }}
+                >
+                    Back
+                </Button>
                 <Box sx={{ 
                     textAlign: 'center', 
                     mb: 6, 
