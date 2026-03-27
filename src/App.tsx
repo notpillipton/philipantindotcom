@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Box } from '@mui/material'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import About from './components/About'
 import Competencies from './components/Competencies'
@@ -17,10 +18,16 @@ function App() {
   return (
     <Box>
       <Header onOpenContact={handleOpenContact} />
-      <About />
-      <Competencies />
-      <Contact onOpenContact={handleOpenContact} />
-      <Past />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <About />
+            <Contact onOpenContact={handleOpenContact} />
+            <Past />
+          </>
+        } />
+        <Route path="/competencies" element={<Competencies />} />
+      </Routes>
       <Footer />
       <ContactForm open={contactOpen} onClose={handleCloseContact} />
     </Box>

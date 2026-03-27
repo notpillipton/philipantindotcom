@@ -5,7 +5,9 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import SchoolIcon from '@mui/icons-material/School';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import DownloadIcon from '@mui/icons-material/Download';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 const assets = [
     {
@@ -31,6 +33,7 @@ const assets = [
 ];
 
 const About: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <Box component="section" id="bio" sx={{ py: 8, bgcolor: '#f4f4f4' }}>
             <Container maxWidth="lg">
@@ -59,7 +62,7 @@ const About: React.FC = () => {
                     ))}
                 </Grid>
 
-                <Box sx={{ textAlign: 'center', mt: 6 }}>
+                <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', mt: 6, flexWrap: 'wrap' }}>
                     <Button
                         variant="contained"
                         color="primary"
@@ -69,6 +72,15 @@ const About: React.FC = () => {
                         startIcon={<DownloadIcon />}
                     >
                         Download Philip's Resume
+                    </Button>
+                    <Button
+                        variant="outlined"
+                        color="primary"
+                        onClick={() => navigate('/competencies')}
+                        startIcon={<VisibilityIcon />}
+                        sx={{ borderWidth: 2, '&:hover': { borderWidth: 2 } }}
+                    >
+                        See Philip's Competencies
                     </Button>
                 </Box>
             </Container>

@@ -1,0 +1,308 @@
+	{
+        "competencies": [
+            {
+                "name": "Agile Methodology",
+                "category": "Technical"
+            },
+            {
+                "name": "AI-Assisted UI Development",
+                "category": "Technical"
+            },
+            {
+                "name": "Angular (Framework)",
+                "category": "Technical"
+            },
+            {
+                "name": "Applied Ethics",
+                "category": "Philosophical"
+            },
+            {
+                "name": "Automated Testing",
+                "category": "Technical"
+            },
+            {
+                "name": "Azure Repos",
+                "category": "Technical"
+            },
+            {
+                "name": "Software Architecture",
+                "category": "Technical"
+            },
+            {
+                "name": "C#",
+                "category": "Technical"
+            },
+            {
+                "name": "Cascading Style Sheets (CSS)",
+                "category": "Technical"
+            },
+            {
+                "name": "Choral Singing",
+                "category": "Artistic"
+            },
+            {
+                "name": "CI/CD",
+                "category": "Technical"
+            },
+            {
+                "name": "Classical Singing",
+                "category": "Artistic"
+            },
+            {
+                "name": "Classroom Management",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Classroom Teaching",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Clay Sculpture",
+                "category": "Artistic"
+            },
+            {
+                "name": "Critical Thinking",
+                "category": "Philosophical"
+            },
+            {
+                "name": "Curriculum Development",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Cypress",
+                "category": "Technical"
+            },
+            {
+                "name": "Design Patterns",
+                "category": "Technical"
+            },
+            {
+                "name": "DevOps",
+                "category": "Technical"
+            },
+            {
+                "name": "Docker",
+                "category": "Technical"
+            },
+            {
+                "name": "ElasticSearch",
+                "category": "Technical"
+            },
+            {
+                "name": "ELI5",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Employee Mentoring",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Ethics",
+                "category": "Philosophical"
+            },
+            {
+                "name": "Express.js",
+                "category": "Technical"
+            },
+            {
+                "name": "Front End Architecture",
+                "category": "Technical"
+            },
+            {
+                "name": "Front End Design",
+                "category": "Technical"
+            },
+            {
+                "name": "Front End Development",
+                "category": "Technical"
+            },
+            {
+                "name": "Front End Testing",
+                "category": "Technical"
+            },
+            {
+                "name": "Git",
+                "category": "Technical"
+            },
+            {
+                "name": "Group Mentoring",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "HTML5",
+                "category": "Technical"
+            },
+            {
+                "name": "Hyper Text Markup Language (HTML)",
+                "category": "Technical"
+            },
+            {
+                "name": "IT Mentoring",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Java",
+                "category": "Technical"
+            },
+            {
+                "name": "JavaScript",
+                "category": "Technical"
+            },
+            {
+                "name": "Jest",
+                "category": "Technical"
+            },
+            {
+                "name": "Kubernetes",
+                "category": "Technical"
+            },
+            {
+                "name": "Leadership",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Logic",
+                "category": "Philosophical"
+            },
+            {
+                "name": "Mentor Training",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Mentoring New Hires",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Mentorship",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Microsoft Azure DevOps",
+                "category": "Technical"
+            },
+            {
+                "name": "Microsoft Copilot",
+                "category": "Technical"
+            },
+            {
+                "name": "Moral Philosophy",
+                "category": "Philosophical"
+            },
+            {
+                "name": "Music Composition",
+                "category": "Artistic"
+            },
+            {
+                "name": "Music Performance",
+                "category": "Artistic"
+            },
+            {
+                "name": "Music Theory",
+                "category": "Artistic"
+            },
+            {
+                "name": "Nginx Web Server",
+                "category": "Technical"
+            },
+            {
+                "name": "ngrx",
+                "category": "Technical"
+            },
+            {
+                "name": "Node.js",
+                "category": "Technical"
+            },
+            {
+                "name": "Nonprofit Leadership",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Peer Mentoring",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Philosophy",
+                "category": "Philosophical"
+            },
+            {
+                "name": "Philosophy of Religion",
+                "category": "Philosophical"
+            },
+            {
+                "name": "Philosophy of Science",
+                "category": "Philosophical"
+            },
+            {
+                "name": "Prose Writing",
+                "category": "Artistic"
+            },
+            {
+                "name": "Public Speaking",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "React.js",
+                "category": "Technical"
+            },
+            {
+                "name": "Reactive Extensions for JavaScript (RxJS)",
+                "category": "Technical"
+            },
+            {
+                "name": "RESTful APIs",
+                "category": "Technical"
+            },
+            {
+                "name": "RESTful Interfaces",
+                "category": "Technical"
+            },
+            {
+                "name": "RxJS",
+                "category": "Technical"
+            },
+            {
+                "name": "Scrum",
+                "category": "Technical"
+            },
+            {
+                "name": "Software Code Quality",
+                "category": "Technical"
+            },
+            {
+                "name": "Software Development",
+                "category": "Technical"
+            },
+            {
+                "name": "Songwriting",
+                "category": "Artistic"
+            },
+            {
+                "name": "Spring Boot",
+                "category": "Technical"
+            },
+            {
+                "name": "Technical Mentoring",
+                "category": "Interpersonal"
+            },
+            {
+                "name": "Theology",
+                "category": "Philosophical"
+            },
+            {
+                "name": "Unit Testing",
+                "category": "Technical"
+            },
+            {
+                "name": "User Interfaces (UI)",
+                "category": "Technical"
+            },
+            {
+                "name": "Web Application Frameworks",
+                "category": "Technical"
+            },
+            {
+                "name": "Web Development",
+                "category": "Technical"
+            }
+        ]
+    }

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Box, Typography, Button, Container, IconButton, Drawer, List, ListItem, ListItemText, useScrollTrigger, Slide } from '@mui/material';
+import { useNavigate, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const navItems = [
-    { label: 'About Philip', target: 'bio' },
-    { label: 'Contact Philip', target: 'contact' },
-    { label: 'Time Warp', target: 'past' }
+    { label: 'About Philip', target: 'bio', isRoute: false },
+    { label: 'Competencies', target: '/competencies', isRoute: true },
+    { label: 'Contact Philip', target: 'contact', isRoute: false },
+    { label: 'Time Warp', target: 'past', isRoute: false }
 ];
 
 function HideOnScroll(props: { children: React.ReactElement }) {
@@ -48,13 +50,43 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
         setMobileOpen(!mobileOpen);
     };
 
-    const scrollToSection = (id: string) => {
-        if (id === 'contact') {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            setTimeout(() => {
+                const id = location.hash.replace('#', '');
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }, [location]);
+
+    const scrollToSection = (target: string, isRoute?: boolean) => {
+        if (target === 'contact') {
             onOpenContact();
             setMobileOpen(false);
             return;
         }
-        const element = document.getElementById(id);
+
+        if (isRoute) {
+            navigate(target);
+            setMobileOpen(false);
+            return;
+        }
+
+        if (location.pathname !== '/') {
+            navigate(`/#${target}`);
+            setMobileOpen(false);
+            return;
+        }
+
+        const element = document.getElementById(target);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -69,7 +101,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item.target} disablePadding>
-                        <Button onClick={() => scrollToSection(item.target)} sx={{ textAlign: 'center', width: '100%', color: 'text.primary' }}>
+                        <Button onClick={() => scrollToSection(item.target, item.isRoute)} sx={{ textAlign: 'center', width: '100%', color: 'text.primary' }}>
                             <ListItemText primary={item.label} slotProps={{ primary: { sx: { fontFamily: 'Ubuntu' } } }} />
                         </Button>
                     </ListItem>
@@ -102,7 +134,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                                     {navItems.map((item) => (
                                         <Button
                                             key={item.target}
-                                            onClick={() => scrollToSection(item.target)}
+                                            onClick={() => scrollToSection(item.target, item.isRoute)}
                                             sx={{ color: 'text.primary', fontWeight: 700, fontSize: '90%' }}
                                         >
                                             {item.label.toUpperCase()}
@@ -131,6 +163,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             </Box>
 
             {/* Hero Section */}
+            {location.pathname === '/' && (
             <Box
                 sx={{
                     backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/img/hero.jpg")',
@@ -172,6 +205,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                     </Box>
                 </Container>
             </Box>
+            )}
         </>
     );
 };
