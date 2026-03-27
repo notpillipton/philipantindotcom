@@ -8,12 +8,21 @@ import OldCompetencies from './OldCompetencies';
 const Competencies: React.FC = () => {
     const navigate = useNavigate();
     const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+    const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
     const categories = useMemo(() => {
         const cats = new Set<string>();
         data.competencies.forEach(comp => cats.add(comp.category));
         return Array.from(cats);
     }, []);
+
+    const toggleCategory = (cat: string) => {
+        setSelectedCategories(prev => 
+            prev.includes(cat) 
+                ? prev.filter(c => c !== cat) 
+                : [...prev, cat]
+        );
+    };
 
     return (
         <>
@@ -51,25 +60,29 @@ const Competencies: React.FC = () => {
                             mb: 6
                         }}
                     >
-                        {categories.map((cat) => (
-                            <Button
-                                key={cat}
-                                variant={hoveredCategory === cat ? "contained" : "outlined"}
-                                color={hoveredCategory === cat ? "primary" : "secondary"}
-                                size="large"
-                                onMouseEnter={() => setHoveredCategory(cat)}
-                                onMouseLeave={() => setHoveredCategory(null)}
-                                sx={{
-                                    borderWidth: 2,
-                                    '&:hover': {
+                        {categories.map((cat) => {
+                            const isActive = hoveredCategory === cat || selectedCategories.includes(cat);
+                            return (
+                                <Button
+                                    key={cat}
+                                    variant={isActive ? "contained" : "outlined"}
+                                    color={isActive ? "primary" : "secondary"}
+                                    size="large"
+                                    onMouseEnter={() => setHoveredCategory(cat)}
+                                    onMouseLeave={() => setHoveredCategory(null)}
+                                    onClick={() => toggleCategory(cat)}
+                                    sx={{
                                         borderWidth: 2,
-                                    },
-                                    transition: 'all 0.3s ease'
-                                }}
-                            >
-                                {cat}
-                            </Button>
-                        ))}
+                                        '&:hover': {
+                                            borderWidth: 2,
+                                        },
+                                        transition: 'all 0.3s ease'
+                                    }}
+                                >
+                                    {cat}
+                                </Button>
+                            );
+                        })}
                     </Box>
 
                     <Box
@@ -82,18 +95,21 @@ const Competencies: React.FC = () => {
                             mx: 'auto'
                         }}
                     >
-                        {data.competencies.map((comp, idx) => (
-                            <Chip
-                                key={idx}
-                                label={comp.name}
-                                color={hoveredCategory === comp.category ? 'primary' : 'secondary'}
-                                variant="filled"
-                                sx={{
-                                    fontSize: '1rem',
-                                    py: 2.5,
-                                    transition: 'background-color 0.3s ease'
-                                }} />
-                        ))}
+                        {data.competencies.map((comp, idx) => {
+                            const isActive = hoveredCategory === comp.category || selectedCategories.includes(comp.category);
+                            return (
+                                <Chip
+                                    key={idx}
+                                    label={comp.name}
+                                    color={isActive ? 'primary' : 'secondary'}
+                                    variant="filled"
+                                    sx={{
+                                        fontSize: '1rem',
+                                        py: 2.5,
+                                        transition: 'background-color 0.3s ease'
+                                    }} />
+                            );
+                        })}
                     </Box>
                 </Container>
             </Box>
