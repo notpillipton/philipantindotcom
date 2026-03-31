@@ -4,13 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-
-const navItems = [
-    { label: 'About Philip', target: 'bio', isRoute: false },
-    { label: 'Competencies', target: '/competencies', isRoute: true },
-    { label: 'Contact Philip', target: 'contact', isRoute: false },
-    { label: 'Time Warp', target: '/past', isRoute: true }
-];
+import data from '../assets/nav-items.json';
 
 function HideOnScroll(props: { children: React.ReactElement }) {
     const { children } = props;
@@ -99,7 +93,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 Philip Antin
             </Typography>
             <List>
-                {navItems.map((item) => (
+                {data.navItems.map((item) => (
                     <ListItem key={item.target} disablePadding>
                         <Button onClick={() => scrollToSection(item.target, item.isRoute)} sx={{ textAlign: 'center', width: '100%', color: 'text.primary' }}>
                             <ListItemText primary={item.label} slotProps={{ primary: { sx: { fontFamily: 'Ubuntu' } } }} />
@@ -131,7 +125,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                                 </IconButton>
                             ) : (
                                 <Box sx={{ display: 'flex', gap: 2 }}>
-                                    {navItems.map((item) => (
+                                    {data.navItems.map((item) => (
                                         <Button
                                             key={item.target}
                                             onClick={() => scrollToSection(item.target, item.isRoute)}

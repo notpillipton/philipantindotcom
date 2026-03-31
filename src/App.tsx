@@ -28,7 +28,7 @@ function App() {
         <Route path="/competencies" element={<Competencies />} />
         <Route path="/past" element={<Past />} />
       </Routes>
-      <Footer />
+      <Footer onOpenContact={handleOpenContact} />
       <ContactForm open={contactOpen} onClose={handleCloseContact} />
     </Box>
   )
