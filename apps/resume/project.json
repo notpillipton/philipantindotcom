@@ -14,7 +14,7 @@
         "outputPath": "dist/apps/resume",
         "index": "apps/resume/src/index.html",
         "baseHref": "/",
-        "main": "apps/resume/src/main.ts",
+        "main": "apps/resume/src/main.tsx",
         "tsConfig": "apps/resume/tsconfig.app.json",
         "assets": ["apps/resume/src/favicon.ico", "apps/resume/src/assets"],
         "styles": ["apps/resume/src/styles.scss"],
@@ -51,7 +51,7 @@
       "options": {
         "buildTarget": "resume:build",
         "hmr": true,
-        "port": 4201
+        "port": 4202
       },
       "configurations": {
         "development": {

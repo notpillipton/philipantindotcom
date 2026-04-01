@@ -1,0 +1,4 @@
+{
+    "header": "http://localhost:4201",
+    "resume": "http://localhost:4202/remoteEntry.js"
+}

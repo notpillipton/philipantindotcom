@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "resume/Module": ["apps/resume/src/remote-entry.ts"],
+      "resume/Module": ["apps/resume/src/remote-entry.tsx"],
       "header/Routes": ["apps/header/src/app/remote-entry/entry.routes.ts"]
     }
   },
