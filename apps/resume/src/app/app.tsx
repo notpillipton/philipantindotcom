@@ -1,9 +1,9 @@
 import { Box } from '@mui/material'
 import { Routes, Route } from 'react-router-dom'
-import About from './components/About'
-import Competencies from './components/Competencies'
-import Past from './components/Past'
-import Footer from './components/Footer'
+import { About } from '@resume/about'
+import { Competencies } from '@resume/competencies'
+import { Past } from '@resume/past'
+import { Footer } from '@resume/footer'
 
 export function App() {
   return (
@@ -13,7 +13,7 @@ export function App() {
         <Route path="/competencies" element={<Competencies />} />
         <Route path="/past" element={<Past />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Box>
   )
 }

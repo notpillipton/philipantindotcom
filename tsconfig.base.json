@@ -14,9 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "resolveJsonModule": true,
     "paths": {
       "resume/Module": ["apps/resume/src/remote-entry.tsx"],
-      "header/Routes": ["apps/header/src/app/remote-entry/entry.routes.ts"]
+      "@resume/about": ["libs/resume/about/src/index.ts"],
+      "@resume/past": ["libs/resume/past/src/index.ts"],
+      "@resume/competencies": ["libs/resume/competencies/src/index.ts"],
+      "@resume/footer": ["libs/resume/footer/src/index.ts"],
+      "@resume/old-competencies": ["libs/resume/old-competencies/src/index.ts"],
+      "@shared/assets/*": ["libs/shared/assets/*"],
     }
   },
   "exclude": ["node_modules", "tmp"]
