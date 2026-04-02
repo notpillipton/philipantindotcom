@@ -15,6 +15,9 @@ const config: ModuleFederationConfig = {
    *
    */
   remotes: [],
+  shared: (name, config) => {
+    return false;
+  },
 };
 
 /**

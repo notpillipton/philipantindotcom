@@ -5,6 +5,9 @@ const config: ModuleFederationConfig = {
   exposes: {
     './Module': './src/remote-entry.tsx',
   },
+  shared: (name, config) => {
+    return false;
+  },
 };
 
 /**
