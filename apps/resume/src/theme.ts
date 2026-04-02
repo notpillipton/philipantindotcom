@@ -3,48 +3,48 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#cc3300', // Orange accent from original site
-            contrastText: '#fff',
+            main: 'var(--theme-primary-main)',
+            contrastText: 'var(--theme-primary-contrast)',
         },
         secondary: {
-            main: '#555555', // Dark grey
+            main: 'var(--theme-secondary-main)',
         },
         background: {
-            default: '#fff',
-            paper: '#f4f4f4',
+            default: 'var(--theme-bg-default)',
+            paper: 'var(--theme-bg-paper)',
         },
         text: {
-            primary: '#555555',
+            primary: 'var(--theme-text-primary)',
         }
     },
     typography: {
-        fontFamily: 'Ubuntu, sans-serif',
+        fontFamily: 'var(--theme-font-body)',
         h1: {
-            fontFamily: 'Philosopher, sans-serif',
+            fontFamily: 'var(--theme-font-header)',
             fontWeight: 700,
         },
         h2: {
-            fontFamily: 'Philosopher, sans-serif',
+            fontFamily: 'var(--theme-font-header)',
         },
         h3: {
-            fontFamily: 'Philosopher, sans-serif',
-            color: '#555555',
+            fontFamily: 'var(--theme-font-header)',
+            color: 'var(--theme-text-primary)',
         },
         h4: {
-            fontFamily: 'Philosopher, sans-serif',
+            fontFamily: 'var(--theme-font-header)',
         },
         h5: {
-            fontFamily: 'Philosopher, sans-serif',
+            fontFamily: 'var(--theme-font-header)',
         },
         h6: {
-            fontFamily: 'Philosopher, sans-serif',
+            fontFamily: 'var(--theme-font-header)',
         },
         body1: {
-            fontFamily: 'Ubuntu, sans-serif',
+            fontFamily: 'var(--theme-font-body)',
             fontSize: '20px',
             fontWeight: 300,
             lineHeight: 1.45,
-            color: '#555555',
+            color: 'var(--theme-text-primary)',
         },
         button: {
             textTransform: 'none',
@@ -54,13 +54,13 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: '200px',
+                    borderRadius: 'var(--theme-button-radius)',
                     padding: '10px 30px',
                     fontSize: '18px',
                 },
                 containedPrimary: {
                     '&:hover': {
-                        backgroundColor: '#cc6b4b',
+                        backgroundColor: 'var(--theme-primary-hover)',
                     }
                 }
             }

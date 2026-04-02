@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../../../libs/shared/assets/theme-variables.css';
+
+:root {
+  /* Map shared theme properties to Angular Material (MDC variables) */
+  --mdc-filled-button-container-color: var(--theme-primary-main);
+  --mdc-filled-button-label-text-color: var(--theme-primary-contrast);
+  --mdc-text-button-label-text-color: var(--theme-primary-main);
+  --mdc-outlined-button-label-text-color: var(--theme-primary-main);
+  --mat-toolbar-container-background-color: var(--theme-bg-default);
+  --mat-toolbar-container-text-color: var(--theme-text-primary);
+}

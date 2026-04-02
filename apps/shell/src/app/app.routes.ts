@@ -3,14 +3,36 @@ import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
-    path: '/',
+    path: '',
     component: WebComponentWrapper,
     data: {
-      type: 'script',
+      type: 'module',
       remoteEntry: 'http://localhost:4202/remoteEntry.js',
       remoteName: 'resume',
       exposedModule: './Module',
       elementName: 'resume',
     },
-  }
+  },
+  {
+    path: 'competencies',
+    component: WebComponentWrapper,
+    data: {
+      type: 'module',
+      remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      remoteName: 'resume',
+      exposedModule: './Module',
+      elementName: 'resume',
+    },
+  },
+  {
+    path: 'past',
+    component: WebComponentWrapper,
+    data: {
+      type: 'module',
+      remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      remoteName: 'resume',
+      exposedModule: './Module',
+      elementName: 'resume',
+    },
+  },
 ];
