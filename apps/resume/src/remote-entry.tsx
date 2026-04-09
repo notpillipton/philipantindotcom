@@ -6,14 +6,11 @@ import { BrowserRouter } from 'react-router-dom';
 import theme from '@shared/theme';
 import App from './app/app';
 
-import '@fontsource/philosopher/400.css';
-import '@fontsource/philosopher/700.css';
-import '@fontsource/ubuntu/300.css';
-import '@fontsource/ubuntu/400.css';
-import '@fontsource/ubuntu/500.css';
-import '@fontsource/ubuntu/700.css';
+import { injectThemeVariables } from '@shared/theme-tokens';
 import '@shared/assets/theme-variables.css';
 
+// Inject shared theme tokens into the global CSS Scope
+injectThemeVariables();
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean, error: any}> {
   constructor(props: any) {
     super(props);
@@ -45,7 +42,7 @@ class ResumeElement extends HTMLElement {
 
   connectedCallback() {
     const mountPoint = document.createElement('div');
-    this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
+    this.appendChild(mountPoint); // Render using Light DOM for style cascading
 
     this.root = createRoot(mountPoint);
     this.root.render(

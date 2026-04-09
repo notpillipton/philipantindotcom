@@ -38,14 +38,14 @@ export const About: React.FC = () => {
         <Box component="section" id="bio" sx={{ py: 8, bgcolor: '#f4f4f4' }}>
             <Container maxWidth="lg">
                 <Box sx={{ textAlign: 'center', mb: 6, width: { xs: '100%', md: '70%' }, mx: 'auto' }}>
-                    <Typography variant="h4" component="h3" gutterBottom sx={{ fontSize: '180%', textTransform: 'uppercase', mb: 2 }}>
+                    <Typography variant="h1" component="h3" gutterBottom sx={{ fontSize: '180%', textTransform: 'uppercase', mb: 2 }}>
                         Who Is Philip? What Can He Do?
                     </Typography>
                     <Box sx={{ width: '100px', height: '2px', bgcolor: 'primary.main', mx: 'auto', mb: 4 }} />
-                    <Typography variant="body1" sx={{ fontSize: '110%', lineHeight: 1.45, mb: 4, fontStyle: 'italic' }}>
+                    <Typography variant="h2" sx={{ fontSize: '110%', lineHeight: 1.45, mb: 4, fontStyle: 'italic' }}>
                         Insatiable learner. Effective communicator. Perceptive collaborator.
                     </Typography>
-                    <Typography variant="body1" sx={{ fontSize: '110%', lineHeight: 1.45, mb: 4 }}>
+                    <Typography variant="h2" sx={{ fontSize: '110%', lineHeight: 1.45, mb: 4 }}>
                         Philip draws upon his background in engineering, ethics, and nonprofit leadership to solve complex challenges in software architecture and technical leadership.
                     </Typography>
                 </Box>
@@ -55,7 +55,7 @@ export const About: React.FC = () => {
                         <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
                             <Paper elevation={0} sx={{ p: 2, textAlign: 'center', bgcolor: 'transparent' }}>
                                 {item.icon}
-                                <Typography variant="h6" gutterBottom sx={{ fontSize: '110%', mb: 2, fontWeight: 'bold' }}>{item.title}</Typography>
+                                <Typography variant="h3" gutterBottom sx={{ fontSize: '110%', mb: 2, fontWeight: 'bold' }}>{item.title}</Typography>
                                 <Typography variant="body2" sx={{ fontSize: '90%', lineHeight: 1.45 }}>{item.description}</Typography>
                             </Paper>
                         </Grid>

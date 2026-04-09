@@ -1,52 +1,53 @@
 import { createTheme } from '@mui/material/styles';
+import { ThemeTokens } from './theme-tokens';
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: 'var(--theme-primary-main)',
-            light: 'var(--theme-primary-hover)',
-            dark: 'var(--theme-primary-hover)',
-            contrastText: 'var(--theme-primary-contrast)',
+            main: ThemeTokens['--theme-primary-main'],
+            light: ThemeTokens['--theme-primary-hover'],
+            dark: ThemeTokens['--theme-primary-hover'],
+            contrastText: ThemeTokens['--theme-primary-contrast'],
         },
         secondary: {
-            main: 'var(--theme-secondary-main)',
-            light: 'var(--theme-secondary-main)',
-            dark: 'var(--theme-secondary-main)',
-            contrastText: 'var(--theme-primary-contrast)',
+            main: ThemeTokens['--theme-secondary-main'],
+            light: ThemeTokens['--theme-secondary-main'],
+            dark: ThemeTokens['--theme-secondary-main'],
+            contrastText: ThemeTokens['--theme-primary-contrast'],
         },
         background: {
-            default: 'var(--theme-bg-default)',
-            paper: 'var(--theme-bg-paper)',
+            default: ThemeTokens['--theme-bg-default'],
+            paper: ThemeTokens['--theme-bg-paper'],
         },
         text: {
-            primary: 'var(--theme-text-primary)',
+            primary: ThemeTokens['--theme-text-primary'],
         }
     },
     typography: {
-        fontFamily: 'var(--theme-font-body)',
+        fontFamily: ThemeTokens['--theme-font-body'],
         h1: {
-            fontFamily: 'var(--theme-font-header)',
+            fontFamily: ThemeTokens['--theme-font-header'],
         },
         h2: {
-            fontFamily: 'var(--theme-font-header)',
+            fontFamily: ThemeTokens['--theme-font-header'],
         },
         h3: {
-            fontFamily: 'var(--theme-font-header)',
+            fontFamily: ThemeTokens['--theme-font-header'],
         },
         h4: {
-            fontFamily: 'var(--theme-font-header)',
+            fontFamily: ThemeTokens['--theme-font-header'],
         },
         h5: {
-            fontFamily: 'var(--theme-font-header)',
+            fontFamily: ThemeTokens['--theme-font-header'],
         },
         h6: {
-            fontFamily: 'var(--theme-font-header)',
+            fontFamily: ThemeTokens['--theme-font-header'],
         },
         body1: {
-            fontFamily: 'var(--theme-font-body)',
+            fontFamily: ThemeTokens['--theme-font-body'],
         },
         button: {
-            fontFamily: 'var(--theme-font-header)',
+            fontFamily: ThemeTokens['--theme-font-header'],
             textTransform: 'none',
         }
     },
@@ -54,13 +55,13 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: 'var(--theme-button-radius)',
+                    borderRadius: ThemeTokens['--theme-button-radius'],
                     padding: '10px 30px',
                     fontSize: '18px',
                 },
                 containedPrimary: {
                     '&:hover': {
-                        backgroundColor: 'var(--theme-primary-hover)',
+                        backgroundColor: ThemeTokens['--theme-primary-hover'],
                     }
                 }
             }

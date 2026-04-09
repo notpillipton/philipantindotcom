@@ -4,13 +4,11 @@ import { ThemeProvider, CssBaseline } from '@mui/material'
 import { BrowserRouter } from 'react-router-dom'
 import theme from '@shared/theme'
 import App from './app/app'
+import { injectThemeVariables } from '@shared/theme-tokens'
 
-import '@fontsource/philosopher/400.css';
-import '@fontsource/philosopher/700.css';
-import '@fontsource/ubuntu/300.css';
-import '@fontsource/ubuntu/400.css';
-import '@fontsource/ubuntu/500.css';
-import '@fontsource/ubuntu/700.css';
+// Inject shared theme tokens into the global scope as CSS variables
+injectThemeVariables()
+
 import '@shared/assets/theme-variables.css';
 
 createRoot(document.getElementById('root')!).render(

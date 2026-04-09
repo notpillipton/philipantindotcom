@@ -24,6 +24,7 @@
       "@resume/old-competencies": ["libs/resume/old-competencies/src/index.ts"],
       "@shared/assets/*": ["libs/shared/assets/*"],
       "@shared/theme": ["libs/shared/theme.ts"],
+      "@shared/theme-tokens": ["libs/shared/theme-tokens.ts"],
       "@shell/header": ["libs/shell/header/src/index.ts"]
     }
   },
