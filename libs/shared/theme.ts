@@ -47,7 +47,7 @@ const theme = createTheme({
             fontFamily: ThemeTokens['--theme-font-body'],
         },
         button: {
-            fontFamily: ThemeTokens['--theme-font-header'],
+            fontFamily: ThemeTokens['--theme-font-body'],
             textTransform: 'none',
         }
     },

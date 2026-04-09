@@ -98,10 +98,9 @@ import navData from '@shared/assets/nav-items.json';
     }
 
     .logo img {
-      height: 40px;
+      height: 50px;
       border-radius: 50%;
       margin-right: 12px;
-      border: 2px solid var(--theme-primary-main);
     }
 
     .desktop-nav {

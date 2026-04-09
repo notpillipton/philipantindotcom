@@ -12,7 +12,7 @@ $custom-typography: mat.m2-define-typography-config(
   $headline-4: mat.m2-define-typography-level(34px, 40px, 400, 'var(--theme-font-header)'),
   $headline-5: mat.m2-define-typography-level(24px, 32px, 400, 'var(--theme-font-header)'),
   $headline-6: mat.m2-define-typography-level(20px, 32px, 500, 'var(--theme-font-header)'),
-  $button: mat.m2-define-typography-level(14px, 14px, 700, 'var(--theme-font-header)'),
+  $button: mat.m2-define-typography-level(18px, 24px, 700, 'var(--theme-font-body)'),
 );
 
 @include mat.core();
