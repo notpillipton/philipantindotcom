@@ -1,11 +1,18 @@
 import { Box } from '@mui/material'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import { About } from '@resume/about'
 import { Competencies } from '@resume/competencies'
 import { Past } from '@resume/past'
 import { Footer } from '@resume/footer'
 
 export function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <Box>
       <Routes>
