@@ -64,7 +64,6 @@ import navData from '@shared/assets/nav-items.json';
   styles: [`
     :host {
       display: block;
-      font-family: var(--theme-font-body);
     }
 
     /* Toolbar Layout */
@@ -72,8 +71,6 @@ import navData from '@shared/assets/nav-items.json';
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: var(--theme-bg-default);
-      color: var(--theme-text-primary);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease-in-out;
     }
@@ -112,10 +109,7 @@ import navData from '@shared/assets/nav-items.json';
     }
 
     .desktop-nav button {
-      font-weight: 700;
       color: var(--theme-text-primary);
-      text-transform: uppercase;
-      font-family: var(--theme-font-header);
     }
 
     .desktop-nav button:hover {
@@ -162,17 +156,13 @@ import navData from '@shared/assets/nav-items.json';
     }
     
     .drawer-header h2 {
-      font-family: var(--theme-font-header);
       margin: 0;
       font-size: 1.5rem;
       color: var(--theme-primary-main);
-      font-weight: 700;
     }
 
     .mat-nav-list a {
       color: var(--theme-text-primary);
-      font-family: var(--theme-font-header);
-      font-weight: 500;
     }
 
     .mat-nav-list a:hover {
@@ -194,7 +184,7 @@ export class Header implements OnInit {
       // Determine if we are exactly on home
       const url = event.urlAfterRedirects;
       this.isHome = url === '/' || url.startsWith('/#');
-      
+
       // Scroll handling for hash logic
       if (this.router.url.includes('#')) {
         const id = this.router.url.split('#')[1];

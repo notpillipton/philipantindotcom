@@ -3,37 +3,35 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#cc3300',
-            light: '#cc6b4b',
-            dark: '#cc6b4b',
-            contrastText: '#fff',
+            main: 'var(--theme-primary-main)',
+            light: 'var(--theme-primary-hover)',
+            dark: 'var(--theme-primary-hover)',
+            contrastText: 'var(--theme-primary-contrast)',
         },
         secondary: {
-            main: '#555555',
-            light: '#555555',
-            dark: '#555555',
-            contrastText: '#fff',
+            main: 'var(--theme-secondary-main)',
+            light: 'var(--theme-secondary-main)',
+            dark: 'var(--theme-secondary-main)',
+            contrastText: 'var(--theme-primary-contrast)',
         },
         background: {
-            default: '#fff',
-            paper: '#f4f4f4',
+            default: 'var(--theme-bg-default)',
+            paper: 'var(--theme-bg-paper)',
         },
         text: {
-            primary: '#555555',
+            primary: 'var(--theme-text-primary)',
         }
     },
     typography: {
         fontFamily: 'var(--theme-font-body)',
         h1: {
             fontFamily: 'var(--theme-font-header)',
-            fontWeight: 700,
         },
         h2: {
             fontFamily: 'var(--theme-font-header)',
         },
         h3: {
             fontFamily: 'var(--theme-font-header)',
-            color: 'var(--theme-text-primary)',
         },
         h4: {
             fontFamily: 'var(--theme-font-header)',
@@ -46,12 +44,9 @@ const theme = createTheme({
         },
         body1: {
             fontFamily: 'var(--theme-font-body)',
-            fontSize: '20px',
-            fontWeight: 300,
-            lineHeight: 1.45,
-            color: 'var(--theme-text-primary)',
         },
         button: {
+            fontFamily: 'var(--theme-font-header)',
             textTransform: 'none',
         }
     },
