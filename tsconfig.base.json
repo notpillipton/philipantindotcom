@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "paths": {
+      "@environment": ["apps/shell/src/environments/environment.ts"],
       "resume/Module": ["apps/resume/src/remote-entry.tsx"],
       "@resume/about": ["libs/resume/about/src/index.ts"],
       "@resume/past": ["libs/resume/past/src/index.ts"],
@@ -25,6 +26,7 @@
       "@shared/assets/*": ["libs/shared/assets/*"],
       "@shared/theme": ["libs/shared/theme.ts"],
       "@shared/theme-tokens": ["libs/shared/theme-tokens.ts"],
+      "@shell/contact-form": ["libs/shell/contact-form/src/index.ts"],
       "@shell/header": ["libs/shell/header/src/index.ts"]
     }
   },

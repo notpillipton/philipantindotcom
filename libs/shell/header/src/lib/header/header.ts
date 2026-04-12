@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ContactForm } from '@shell/contact-form';
 
 import navData from '@shared/assets/nav-items.json';
 
@@ -20,10 +22,11 @@ import navData from '@shared/assets/nav-items.json';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   template: `
-    <mat-toolbar color="primary" class="sticky-header" [class.hidden]="isHidden">
+    <mat-toolbar class="sticky-header" [class.hidden]="isHidden">
       <div class="toolbar-content">
         <div class="logo">
           <img src="/img/headshot.jpg" alt="Antin headshot" />
@@ -176,7 +179,7 @@ export class Header implements OnInit {
   private lastScrollPosition = 0;
   isHome = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private dialog: MatDialog) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
@@ -215,6 +218,14 @@ export class Header implements OnInit {
   }
 
   scrollToSection(target: string, isRoute?: boolean) {
+    if (target === 'contact') {
+      this.dialog.open(ContactForm, {
+        width: '900px',
+        maxWidth: '100vw'
+      });
+      return;
+    }
+
     if (isRoute) {
       this.router.navigate([target]);
       return;
