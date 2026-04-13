@@ -7,7 +7,7 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import DownloadIcon from '@mui/icons-material/Download';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const assets = [
     {
@@ -32,12 +32,9 @@ const assets = [
     }
 ];
 
-export interface AboutProps {
-    onOpenContact?: () => void;
-}
-
-export const About: React.FC<AboutProps> = ({ onOpenContact }) => {
+export const About: React.FC = () => {
     const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
     const [textIndex, setTextIndex] = useState(0);
 
     const rotatingHeroText = [
@@ -88,7 +85,10 @@ export const About: React.FC<AboutProps> = ({ onOpenContact }) => {
                             variant="contained"
                             color="primary"
                             size="large"
-                            onClick={onOpenContact}
+                            onClick={() => {
+                                setSearchParams({ ...Object.fromEntries(searchParams), contact: 'true' }, { replace: true });
+                                window.dispatchEvent(new Event('popstate'));
+                            }}
                         >
                             Get this guy on the line!
                         </Button>

@@ -1,15 +1,17 @@
 import React from 'react';
 import { Box, Container, Grid, Link, Typography, List, ListItem } from '@mui/material';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import data from '@shared/assets/nav-items.json';
 
 export const Footer: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const scrollToSection = (target: string, isRoute?: boolean) => {
         if (target === 'contact') {
-            //TODO: implement communication to open the form
+            setSearchParams({ ...Object.fromEntries(searchParams), contact: 'true' }, { replace: true });
+            window.dispatchEvent(new Event('popstate'));
             return;
         }
 

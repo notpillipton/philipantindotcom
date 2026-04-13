@@ -8,9 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ContactForm } from '@shell/contact-form';
-
 import navData from '@shared/assets/nav-items.json';
 
 @Component({
@@ -22,8 +19,7 @@ import navData from '@shared/assets/nav-items.json';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule,
-    MatDialogModule
+    MatListModule
   ],
   template: `
     <mat-toolbar class="sticky-header" [class.hidden]="isHidden">
@@ -179,7 +175,7 @@ export class Header implements OnInit {
   private lastScrollPosition = 0;
   isHome = false;
 
-  constructor(private router: Router, private dialog: MatDialog) {
+  constructor(private router: Router) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
@@ -219,10 +215,7 @@ export class Header implements OnInit {
 
   scrollToSection(target: string, isRoute?: boolean) {
     if (target === 'contact') {
-      this.dialog.open(ContactForm, {
-        width: '900px',
-        maxWidth: '100vw'
-      });
+      this.router.navigate([], { queryParams: { contact: 'true' }, queryParamsHandling: 'merge' });
       return;
     }
 
