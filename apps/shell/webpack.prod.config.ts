@@ -9,6 +9,7 @@ import config from './module-federation.config';
 export default withModuleFederation(
   {
     ...config,
+    remotes: [['resume', '/resume/remoteEntry.js']],
     /*
      * Remote overrides for production.
      * Each entry is a pair of a unique name and the URL where it is deployed.

@@ -29,6 +29,23 @@
       },
       "configurations": {
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/shell/src/environments/environment.ts",
+              "with": "apps/shell/src/environments/environment.prod.ts"
+            }
+          ],
+          "assets": [
+            {
+              "glob": "**/*",
+              "input": "apps/shell/src/assets",
+              "ignore": ["module-federation.manifest.json"]
+            },
+            {
+              "glob": "**/*",
+              "input": "apps/shell/public"
+            }
+          ],
           "budgets": [
             {
               "type": "initial",

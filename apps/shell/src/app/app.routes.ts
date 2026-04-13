@@ -1,5 +1,6 @@
 import { WebComponentWrapper } from '@angular-architects/module-federation-tools';
 import { Route } from '@angular/router';
+import { environment } from '../environments/environment';
 
 export const appRoutes: Route[] = [
   {
@@ -7,7 +8,7 @@ export const appRoutes: Route[] = [
     component: WebComponentWrapper,
     data: {
       type: 'script',
-      remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      remoteEntry: environment.resumeRemoteUrl,
       remoteName: 'resume',
       exposedModule: './Module',
       elementName: 'resume-mfe',
@@ -18,7 +19,7 @@ export const appRoutes: Route[] = [
     component: WebComponentWrapper,
     data: {
       type: 'script',
-      remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      remoteEntry: environment.resumeRemoteUrl,
       remoteName: 'resume',
       exposedModule: './Module',
       elementName: 'resume-mfe',
@@ -29,7 +30,7 @@ export const appRoutes: Route[] = [
     component: WebComponentWrapper,
     data: {
       type: 'script',
-      remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      remoteEntry: environment.resumeRemoteUrl,
       remoteName: 'resume',
       exposedModule: './Module',
       elementName: 'resume-mfe',

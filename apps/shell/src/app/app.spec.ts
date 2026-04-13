@@ -1,15 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
-import { NxWelcome } from './nx-welcome';
 import { Router, RouterModule } from '@angular/router';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot([{ path: '', component: NxWelcome }]),
-        App,
-        NxWelcome,
+        RouterModule.forRoot([{ path: '', component: App }]),
+        App
       ],
     }).compileComponents();
   });
@@ -20,10 +18,10 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'shell'`, () => {
+  it(`should have as title 'Philip Antin'`, () => {
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('shell');
+    expect(app.title).toEqual('Philip Antin');
   });
 
   it('should render title', async () => {
