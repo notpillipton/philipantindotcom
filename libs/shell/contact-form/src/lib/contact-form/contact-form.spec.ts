@@ -51,7 +51,6 @@ describe('ContactForm', () => {
   });
 
   it('should not submit if passphrase is incorrect', async () => {
-    const alertSpy = jest.spyOn(window, 'alert').mockImplementation(() => {});
     component.contactForm.patchValue({
       name: 'John Doe',
       email: 'john@example.com',
@@ -61,9 +60,12 @@ describe('ContactForm', () => {
     
     await component.onSubmit();
     
-    expect(alertSpy).toHaveBeenCalled();
+    expect(mockSnackBar.open).toHaveBeenCalledWith(
+      expect.stringContaining('Incorrect passphrase'),
+      'Close',
+      expect.objectContaining({ panelClass: ['error-snackbar'] })
+    );
     expect(mockContactService.sendEmail).not.toHaveBeenCalled();
-    alertSpy.mockRestore();
   });
 
   it('should call contactService and show success snackbar on successful submission', async () => {

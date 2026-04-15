@@ -223,7 +223,7 @@ export class ContactForm implements OnInit {
     const formData = this.contactForm.value;
 
     if (formData.passphrase !== 'NITNA') {
-      window.alert("Incorrect passphrase! Hint: Philip's last name backwards, ALL CAPS.");
+      this.snackBar.open("Incorrect passphrase! Hint: Philip's last name backwards, ALL CAPS.", 'Close', { duration: 6000, panelClass: ['error-snackbar'] });
       return;
     }
 
