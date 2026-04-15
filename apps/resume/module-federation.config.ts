@@ -1,0 +1,16 @@
+import { ModuleFederationConfig } from '@nx/module-federation';
+
+const config: ModuleFederationConfig = {
+  name: 'resume',
+  exposes: {
+    './Module': './src/remote-entry.tsx',
+  },
+  shared: (name, config) => {
+    return false;
+  },
+};
+
+/**
+ * Nx requires a default export of the config to allow correct resolution of the module federation graph.
+ **/
+export default config;
