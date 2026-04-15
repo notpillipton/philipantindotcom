@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2022",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@environment": ["apps/shell/src/environments/environment.ts"],
+      "resume/Module": ["apps/resume/src/remote-entry.tsx"],
+      "@resume/about": ["libs/resume/about/src/index.ts"],
+      "@resume/past": ["libs/resume/past/src/index.ts"],
+      "@resume/competencies": ["libs/resume/competencies/src/index.ts"],
+      "@resume/footer": ["libs/resume/footer/src/index.ts"],
+      "@resume/old-competencies": ["libs/resume/old-competencies/src/index.ts"],
+      "@shared/assets/*": ["libs/shared/assets/*"],
+      "@shared/theme": ["libs/shared/theme.ts"],
+      "@shared/theme-tokens": ["libs/shared/theme-tokens.ts"],
+      "@shell/contact-form": ["libs/shell/contact-form/src/index.ts"],
+      "@shell/header": ["libs/shell/header/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
