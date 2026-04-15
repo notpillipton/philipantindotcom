@@ -1,12 +1,37 @@
 import React from 'react';
 import { Box, Container, Typography, Button } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useNavigate } from 'react-router-dom';
 import HistoryIcon from '@mui/icons-material/History';
 
 const Past: React.FC = () => {
+    const navigate = useNavigate();
     return (
-        <Box component="section" id="past" sx={{ py: 8, bgcolor: '#ffffff' }}>
+        <Box component="section" id="past" sx={{ py: 8, bgcolor: '#ffffff', minHeight: '100vh', position: 'relative' }}>
             <Container maxWidth="lg">
-                <Box sx={{ textAlign: 'center', mb: 6, width: { xs: '100%', md: '70%' }, mx: 'auto' }}>
+                <Button 
+                    startIcon={<ArrowBackIcon />} 
+                    onClick={() => navigate('/')}
+                    sx={{ 
+                        position: 'absolute', 
+                        top: 24, 
+                        left: 24,
+                        color: 'text.secondary',
+                        '&:hover': { color: 'primary.main' }
+                    }}
+                >
+                    Back
+                </Button>
+                <Box sx={{ 
+                    textAlign: 'center', 
+                    mb: 6, 
+                    width: { xs: '100%', md: '70%' }, 
+                    mx: 'auto',
+                    bgcolor: '#e8e8e8',
+                    p: { xs: 4, md: 8 },
+                    borderRadius: 2,
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                }}>
                     <Typography variant="h4" component="h3" gutterBottom sx={{ fontSize: '180%', textTransform: 'uppercase', mb: 2 }}>
                         "How it's going" vs. "How it started"
                     </Typography>

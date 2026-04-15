@@ -36,7 +36,7 @@ const itemData = [
     },
 ];
 
-const Competencies: React.FC = () => {
+const OldCompetencies: React.FC = () => {
 
     const isMobile = useMediaQuery('(max-width:600px)');
     const isTablet = useMediaQuery('(max-width:960px)');
@@ -114,4 +114,4 @@ const Competencies: React.FC = () => {
     );
 };
 
-export default Competencies;
+export default OldCompetencies;

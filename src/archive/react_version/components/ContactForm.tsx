@@ -1,8 +1,39 @@
 import React, { useState } from 'react';
-import { Box, Container, Grid, Typography, TextField, Button, Checkbox, FormControlLabel, MenuItem, Select, FormControl, Alert, Snackbar, CircularProgress, type SelectChangeEvent } from '@mui/material';
+import {
+    Box,
+    Grid,
+    Typography,
+    TextField,
+    Button,
+    Checkbox,
+    FormControlLabel,
+    MenuItem,
+    Select,
+    FormControl,
+    Alert,
+    Snackbar,
+    CircularProgress,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+    IconButton,
+    useMediaQuery,
+    useTheme,
+    type SelectChangeEvent
+} from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import emailjs from '@emailjs/browser';
 
-const Contact: React.FC = () => {
+interface ContactFormProps {
+    open: boolean;
+    onClose: () => void;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ open, onClose }) => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -37,6 +68,11 @@ const Contact: React.FC = () => {
             ...prev,
             followup: e.target.checked
         }));
+    };
+
+    const handleClose = () => {
+        setStatus('idle');
+        onClose();
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -85,6 +121,9 @@ const Contact: React.FC = () => {
                 message: '',
                 passphrase: ''
             });
+            setTimeout(() => {
+                handleClose();
+            }, 2000);
         } catch (error) {
             console.error('Failed to send email:', error);
             setStatus('error');
@@ -95,17 +134,35 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <Box component="section" id="contact" sx={{ py: 8, bgcolor: '#fff' }}>
-            <Container maxWidth="md">
-                <Box sx={{ textAlign: 'center', mb: 6 }}>
-                    <Typography variant="h4" component="h3" gutterBottom sx={{ fontSize: '180%', textTransform: 'uppercase' }}>
-                        Philip would love to hear from you!
-                    </Typography>
-                    <Box sx={{ width: '100px', height: '2px', bgcolor: 'primary.main', mx: 'auto', mb: 4 }} />
-                </Box>
+        <Dialog
+            open={open}
+            onClose={handleClose}
+            fullScreen={isMobile}
+            maxWidth="md"
+            fullWidth
+        >
+            <DialogTitle sx={{ m: 0, p: 2, textAlign: 'center' }}>
+                <IconButton
+                    aria-label="close"
+                    onClick={handleClose}
+                    sx={{
+                        position: 'absolute',
+                        right: 8,
+                        top: 8,
+                        color: (theme) => theme.palette.grey[500],
+                    }}
+                >
+                    <CloseIcon />
+                </IconButton>
+                <Typography variant="h4" component="span" sx={{ fontSize: '150%', textTransform: 'uppercase', display: 'block', mt: 2 }}>
+                    Philip would love to hear from you!
+                </Typography>
+                <Box sx={{ width: '100px', height: '2px', bgcolor: 'primary.main', mx: 'auto', mt: 2 }} />
+            </DialogTitle>
 
-                <form onSubmit={handleSubmit}>
-                    <Grid container spacing={3}>
+            <DialogContent>
+                <form id="contact-form" onSubmit={handleSubmit}>
+                    <Grid container spacing={3} sx={{ mt: 1 }}>
                         <Grid size={{ xs: 12, sm: 4 }}>
                             <Typography sx={{ mt: 2 }}>Name</Typography>
                         </Grid>
@@ -199,31 +256,38 @@ const Contact: React.FC = () => {
                                 required
                             />
                         </Grid>
-
-                        <Grid size={{ xs: 12, sm: 4 }} />
-                        <Grid size={{ xs: 12, sm: 8 }}>
-                            <Button 
-                                type="submit" 
-                                variant="contained" 
-                                color="primary" 
-                                size="large"
-                                disabled={loading}
-                                startIcon={loading && <CircularProgress size={20} color="inherit" />}
-                            >
-                                {loading ? 'Sending...' : 'Send it!'}
-                            </Button>
-                        </Grid>
                     </Grid>
                 </form>
+            </DialogContent>
 
-                <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={() => setOpenSnackbar(false)}>
-                    <Alert onClose={() => setOpenSnackbar(false)} severity={status === 'success' ? 'success' : 'error'} sx={{ width: '100%' }}>
-                        {status === 'success' ? 'Your message was sent! Thank you!' : 'Your message was not sent. Please check for errors.'}
-                    </Alert>
-                </Snackbar>
-            </Container>
-        </Box>
+            <DialogActions sx={{ p: 3, justifyContent: 'flex-end' }}>
+                <Button
+                    onClick={handleClose}
+                    color="inherit"
+                    sx={{ mr: 1 }}
+                >
+                    Cancel
+                </Button>
+                <Button
+                    form="contact-form"
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    disabled={loading}
+                    startIcon={loading && <CircularProgress size={20} color="inherit" />}
+                >
+                    {loading ? 'Sending...' : 'Send it!'}
+                </Button>
+            </DialogActions>
+
+            <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={() => setOpenSnackbar(false)}>
+                <Alert onClose={() => setOpenSnackbar(false)} severity={status === 'success' ? 'success' : 'error'} sx={{ width: '100%' }}>
+                    {status === 'success' ? 'Your message was sent! Thank you!' : 'Your message was not sent. Please check for errors.'}
+                </Alert>
+            </Snackbar>
+        </Dialog>
     );
 };
 
-export default Contact;
+export default ContactForm;
