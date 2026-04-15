@@ -42,11 +42,11 @@ export const Competencies: React.FC = () => {
                         Back
                     </Button>
                     <Box sx={{ textAlign: 'center', mb: 6 }}>
-                        <Typography variant="h4" component="h3" gutterBottom sx={{ fontSize: '180%', textTransform: 'uppercase', mb: 2 }}>
+                        <Typography variant="h1" component="div" gutterBottom sx={{ fontSize: '180%', textTransform: 'uppercase', mb: 2 }}>
                             Core Competencies
                         </Typography>
                         <Box sx={{ width: '100px', height: '2px', bgcolor: 'primary.main', mx: 'auto', mb: 4 }} />
-                        <Typography variant="body1" sx={{ fontSize: '110%', lineHeight: 1.45, mb: 4 }}>
+                        <Typography variant="body1" sx={{ fontSize: '140%', lineHeight: 1.45, mb: 4 }}>
                             A diverse set of skills spanning technical implementation, team leadership, and abstract problem solving<br/>... with a smattering of artistic flair.
                         </Typography>
                     </Box>
