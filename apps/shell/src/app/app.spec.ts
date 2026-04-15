@@ -1,37 +1,79 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { App } from './app';
-import { Router, RouterModule } from '@angular/router';
+import { Router, ActivatedRoute, RouterModule } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { of, BehaviorSubject, Subject } from 'rxjs';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'lib-header',
+  standalone: true,
+  template: '<div>Mock Header</div>'
+})
+class MockHeader {}
 
 describe('App', () => {
+  let component: App;
+  let fixture: ComponentFixture<App>;
+  let mockDialog: any;
+  let mockRouter: any;
+  let queryParams: BehaviorSubject<any>;
+
   beforeEach(async () => {
+    queryParams = new BehaviorSubject({});
+    mockDialog = {
+      open: jest.fn().mockReturnValue({
+        afterClosed: () => of(true),
+        close: jest.fn()
+      })
+    };
+    mockRouter = {
+      navigate: jest.fn(),
+      events: of()
+    };
+
     await TestBed.configureTestingModule({
-      imports: [
-        RouterModule.forRoot([{ path: '', component: App }]),
-        App
-      ],
+      imports: [App],
+      providers: [
+        { provide: MatDialog, useValue: mockDialog },
+        { provide: Router, useValue: mockRouter },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            queryParams: queryParams.asObservable()
+          }
+        }
+      ]
+    }).overrideComponent(App, {
+      set: { imports: [RouterModule, MockHeader] }
     }).compileComponents();
+
+    fixture = TestBed.createComponent(App);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'Philip Antin'`, () => {
-    const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('Philip Antin');
+  it('should open contact dialog when contact=true query param is present', () => {
+    queryParams.next({ contact: 'true' });
+    expect(mockDialog.open).toHaveBeenCalled();
   });
 
-  it('should render title', async () => {
-    const fixture = TestBed.createComponent(App);
-    const router = TestBed.inject(Router);
-    await router.navigate(['']);
-    await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome shell',
-    );
+  it('should close dialog when contact query param is removed', () => {
+    const afterClosedSubject = new Subject();
+    const mockDialogRef = {
+      afterClosed: () => afterClosedSubject.asObservable(),
+      close: jest.fn()
+    };
+    mockDialog.open.mockReturnValue(mockDialogRef);
+    
+    queryParams.next({ contact: 'true' });
+    expect(mockDialog.open).toHaveBeenCalled();
+    
+    queryParams.next({ contact: 'false' });
+    expect(mockDialogRef.close).toHaveBeenCalled();
   });
 });
