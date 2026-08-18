@@ -1,0 +1,43 @@
+name: Deploy Portfolio / Main Site
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Applications (Shell & Resume)
+        run: npm run build
+
+      - name: Prepare Deployment Directory
+        run: |
+          mkdir -p dist/deploy/resume
+          cp -r dist/apps/shell/* dist/deploy/
+          cp -r dist/apps/resume/* dist/deploy/resume/
+
+      - name: Deploy to Main Site via Rsync
+        uses: Burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avzr --delete
+          path: dist/deploy/
+          remote_path: /home/${{ secrets.INMOTION_USER }}/public_html/
+          remote_host: ${{ secrets.INMOTION_HOST }}
+          remote_user: ${{ secrets.INMOTION_USER }}
+          remote_key: ${{ secrets.INMOTION_SSH_KEY }}
+          remote_key_pass: ${{ secrets.INMOTION_SSH_KEY_PASS }}
+          remote_port: 2222

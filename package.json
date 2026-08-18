@@ -5,6 +5,8 @@
   "scripts": {
     "start:angular": "nx serve shell",
     "start:react": "nx serve shell --devRemotes=resume",
+    "build": "nx build shell --configuration=production && nx build resume --configuration=production",
+    "build:prod": "nx build shell --configuration=production && nx build resume --configuration=production",
     "build:react": "nx build resume --configuration=development",
     "build:shell": "nx build shell --configuration=development"
   },
