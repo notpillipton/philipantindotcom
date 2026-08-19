@@ -11,28 +11,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Philip Antin is a capable software designer, an experienced educator, and a skilled analytic philosopher.">
         
-        <link rel="stylesheet" type="text/css" href="/thirdparty/css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="/thirdparty/css/grid.css">
-        <link rel="stylesheet" type="text/css" href="/thirdparty/css/animate.css">
-        <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
-        <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+        <link rel="stylesheet" type="text/css" href="/archive/thirdparty/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/archive/thirdparty/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="/archive/thirdparty/css/animate.css">
+        <link rel="stylesheet" type="text/css" href="/archive/resources/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/archive/resources/css/queries.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher%7CUbuntu" rel="stylesheet">
         <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet">
         
         <title>Philip Antin</title>
         
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="thirdparty/css/jquery-eu-cookie-law-popup.css"/>
-        <script src="thirdparty/js/jquery-eu-cookie-law-popup.js"></script>
+        <link rel="stylesheet" type="text/css" href="/archive/thirdparty/css/jquery-eu-cookie-law-popup.css"/>
+        <script src="/archive/thirdparty/js/jquery-eu-cookie-law-popup.js"></script>
         
-        <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicons/favicon-16x16.png">
-        <link rel="manifest" href="/resources/favicons/site.webmanifest">
-        <link rel="mask-icon" href="/resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="shortcut icon" href="/resources/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/archive/resources/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/archive/resources/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/archive/resources/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/archive/resources/favicons/site.webmanifest">
+        <link rel="mask-icon" href="/archive/resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/archive/resources/favicons/favicon.ico">
         <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="msapplication-config" content="/resources/favicons/browserconfig.xml">
+        <meta name="msapplication-config" content="/archive/resources/favicons/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
         
     </head>
@@ -40,8 +40,8 @@
         <header>
             <nav>
                 <div class="row">
-                    <img src="resources/img/headshot.jpg" alt="Antin headshot" class="logo">
-                    <img src="resources/img/headshot.jpg" alt="Antin headshot" class="logo-small">
+                    <img src="/archive/resources/img/headshot.jpg" alt="Antin headshot" class="logo">
+                    <img src="/archive/resources/img/headshot.jpg" alt="Antin headshot" class="logo-small">
                     <ul class="main-nav">
                         <li><a href="#bio">About Philip</a></li>
                         <li><a href="#projects">Current Projects</a></li>
@@ -107,7 +107,7 @@
             </div>
             
             <div class="row">
-                <a class="btn btn-full" href="/resources/data/Antin%20Programming%20Resume%20-%202018-07.pdf" target="_blank">Download Philip's Resume</a>
+                <a class="btn btn-full" href="/archive/resources/data/Antin%20Programming%20Resume%20-%202018-07.pdf" target="_blank">Download Philip's Resume</a>
             </div>
         </section>
         
@@ -117,7 +117,7 @@
                     <div class='competencies-cell'>
                         <div class='competencies-background'>Application development and programming</div>
                         <div class='competencies-foreground competencies-photo'>
-                            <img src="resources/img/comp1-min.jpg" alt="Application development and programming" title="Application development and programming">
+                            <img src="/archive/resources/img/comp1-min.jpg" alt="Application development and programming" title="Application development and programming">
                         </div>
                     </div>
                 </li>
@@ -125,7 +125,7 @@
                     <div class='competencies-cell'>
                         <div class='competencies-background'>Analytic philosophy, emphasizing formal logic and critical thinking</div>
                         <div class='competencies-foreground competencies-photo'>
-                            <img src="resources/img/comp2.jpg" alt="Analytic philosophy, emphasizing formal logic and critical thinking" title="Analytic philosophy, emphasizing formal logic and critical thinking">
+                            <img src="/archive/resources/img/comp2.jpg" alt="Analytic philosophy, emphasizing formal logic and critical thinking" title="Analytic philosophy, emphasizing formal logic and critical thinking">
                         </div>
                     </div>
                 </li>
@@ -133,7 +133,7 @@
                     <div class='competencies-cell'>
                         <div class='competencies-background'>Fine arts (vocal music and sculpture)</div>
                         <div class='competencies-foreground competencies-photo'>
-                            <img src="resources/img/comp3-min.jpg" alt="Fine arts (vocal music and sculpture)" title="Fine arts (vocal music and sculpture)">
+                            <img src="/archive/resources/img/comp3-min.jpg" alt="Fine arts (vocal music and sculpture)" title="Fine arts (vocal music and sculpture)">
                         </div>
                     </div>
                 </li>
@@ -141,7 +141,7 @@
                     <div class='competencies-cell'>
                         <div class='competencies-background'>Teaching</div>
                         <div class='competencies-foreground competencies-photo'>
-                            <img src="resources/img/comp4.jpg" alt="Teaching" title="Teaching">
+                            <img src="/archive/resources/img/comp4.jpg" alt="Teaching" title="Teaching">
                         </div>
                     </div>
                 </li>
@@ -151,7 +151,7 @@
                     <div class='competencies-cell'>
                         <div class='competencies-background'>Project design and maintenance</div>
                         <div class='competencies-foreground competencies-photo'>
-                            <img src="resources/img/comp5.jpg" alt="Project design" title="Project design and maintenance">
+                            <img src="/archive/resources/img/comp5.jpg" alt="Project design" title="Project design and maintenance">
                         </div>
                     </div>
                 </li>
@@ -159,7 +159,7 @@
                     <div class='competencies-cell'>
                         <div class='competencies-background'>Public speaking and performance</div>
                         <div class='competencies-foreground competencies-photo'>
-                            <img src="resources/img/comp6-min.jpg" alt="Public speaking" title="Public speaking and performance">
+                            <img src="/archive/resources/img/comp6-min.jpg" alt="Public speaking" title="Public speaking and performance">
                         </div>
                     </div>
                 </li>
@@ -167,7 +167,7 @@
                     <div class='competencies-cell'>
                         <div class='competencies-background'>Research</div>
                         <div class='competencies-foreground competencies-photo'>
-                            <img src="resources/img/comp7.jpg" alt="Research" title="Research">
+                            <img src="/archive/resources/img/comp7.jpg" alt="Research" title="Research">
                         </div>
                     </div>
                 </li>
@@ -175,7 +175,7 @@
                     <div class='competencies-cell'>
                         <div class='competencies-background'>Release and update of applications</div>
                         <div class='competencies-foreground competencies-photo'>
-                            <img src="resources/img/comp8.jpg" alt="Release and update of applications" title="Release and update of applications">
+                            <img src="/archive/resources/img/comp8.jpg" alt="Release and update of applications" title="Release and update of applications">
                         </div>
                     </div>
                 </li>
@@ -190,11 +190,11 @@
             
             <div class="row">
                 <div class="col span-1-of-3 projects-box">
-                    <img src="resources/img/devices.gif" alt="Various screens for software development" class="app-screen">
+                    <img src="/archive/resources/img/devices.gif" alt="Various screens for software development" class="app-screen">
                 </div>
                 <div class="col span-2-of-3 projects-box">
                     <div class="projects-item clearfix">
-                        <div><a href="https://itunes.apple.com/us/app/arithmetic-drill/id1393861540?mt=8"><img src="resources/img/ArithmeticDrill120.png" alt="Arithmetic Drill icon"></a></div>
+                        <div><a href="https://itunes.apple.com/us/app/arithmetic-drill/id1393861540?mt=8"><img src="/archive/resources/img/ArithmeticDrill120.png" alt="Arithmetic Drill icon"></a></div>
                         <a href="https://itunes.apple.com/us/app/arithmetic-drill/id1393861540?mt=8"><h4>Arithmetic Drill</h4></a>
                         <ul>
                             <li>Intuitive and customizable mathematics practice app</li>
@@ -203,7 +203,7 @@
                         </ul>
                     </div>
                     <div class="projects-item clearfix">
-                        <div><img src="resources/img/Twizzum%20Icon.svg" alt="Twizzum icon"></div>
+                        <div><img src="/archive/resources/img/Twizzum%20Icon.svg" alt="Twizzum icon"></div>
                         <h4>Twizzum</h4>
                         <ul>
                             <li>Original strategy game of shifting alliances</li>
@@ -212,7 +212,7 @@
                         </ul>
                     </div>
                     <div class="projects-item clearfix">
-                        <div><img src="resources/img/XAttend%20Icon.png" alt="XAttend icon"></div>
+                        <div><img src="/archive/resources/img/XAttend%20Icon.png" alt="XAttend icon"></div>
                         <h4>XAttend</h4>
                         <ul>
                             <li>Cross-platform attendance management tool</li>
@@ -221,7 +221,7 @@
                         </ul>
                     </div>
                     <div class="projects-item clearfix">
-                        <div><img src="resources/img/PseudoTransparency%20Icon.svg" alt="PseudoTransparency icon"></div>
+                        <div><img src="/archive/resources/img/PseudoTransparency%20Icon.svg" alt="PseudoTransparency icon"></div>
                         <h4>PseudoTransparency</h4>
                         <ul>
                             <li>Simple interface for retrieving color codes for simulated transparency</li>
@@ -231,8 +231,8 @@
                     </div>
                     
                     <!-- Activate these buttons once there's a developer entry on the Play Store, or once there's an additional app on the App Store.
-                    <a href="#" class="btn-app"><img src="resources/img/download-app.svg" alt="App Store Button"></a>
-                    <a href="#" class="btn-app"><img src="resources/img/download-app-android.png" alt="Play Store Button"></a>
+                    <a href="#" class="btn-app"><img src="/archive/resources/img/download-app.svg" alt="App Store Button"></a>
+                    <a href="#" class="btn-app"><img src="/archive/resources/img/download-app-android.png" alt="Play Store Button"></a>
                     -->
                 </div>
             </div>
@@ -244,7 +244,7 @@
             </div>
             <div class="row">
                 <div class="col span-1-of-4 box">
-                    <img src="resources/img/headshot.jpg" alt="Philip Antin headshot" class="update-img">
+                    <img src="/archive/resources/img/headshot.jpg" alt="Philip Antin headshot" class="update-img">
                     <h4>PhilipAntin.com</h4>
                     <div class="update-feature">
                         <i class="ion-ios-time icon-small"></i>
@@ -256,7 +256,7 @@
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
-                    <img src="resources/img/headshot.jpg" alt="Philip Antin headshot" class="update-img">
+                    <img src="/archive/resources/img/headshot.jpg" alt="Philip Antin headshot" class="update-img">
                     <h4>PhilipAntin.com</h4>
                     <div class="update-feature">
                         <i class="ion-ios-time icon-small"></i>
@@ -268,7 +268,7 @@
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
-                    <img src="resources/img/ArithmeticDrill120.png" alt="Apple App Store" class="update-img">
+                    <img src="/archive/resources/img/ArithmeticDrill120.png" alt="Apple App Store" class="update-img">
                     <h4>Arithmetic Drill</h4>
                     <div class="update-feature">
                         <i class="ion-ios-time icon-small"></i>
@@ -283,11 +283,11 @@
                         Now available from the App Store!
                     </div>
                     <div class="update-feature update-link">
-                        <a href="https://itunes.apple.com/us/app/arithmetic-drill/id1393861540?mt=8"><img src="resources/img/AppleAppStore.png" alt="Download it now from the App Store"></a>
+                        <a href="https://itunes.apple.com/us/app/arithmetic-drill/id1393861540?mt=8"><img src="/archive/resources/img/AppleAppStore.png" alt="Download it now from the App Store"></a>
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
-                    <img src="resources/img/ArithmeticDrill120.png" alt="Apple App Store" class="update-img">
+                    <img src="/archive/resources/img/ArithmeticDrill120.png" alt="Apple App Store" class="update-img">
                     <h4>Arithmetic Drill</h4>
                     <div class="update-feature">
                         <i class="ion-ios-time icon-small"></i>
@@ -302,7 +302,7 @@
                         Now available from the App Store!
                     </div>
                     <div class="update-feature update-link">
-                        <a href="https://itunes.apple.com/us/app/arithmetic-drill/id1393861540?mt=8"><img src="resources/img/AppleAppStore.png" alt="Download it now from the App Store"></a>
+                        <a href="https://itunes.apple.com/us/app/arithmetic-drill/id1393861540?mt=8"><img src="/archive/resources/img/AppleAppStore.png" alt="Download it now from the App Store"></a>
                     </div>
                 </div>
             </div>
@@ -313,7 +313,7 @@
                 <h3>Philip would love to hear from you!</h3>
             </div>
             <div class="row">
-                <form method="post" action="mailer.php" class="contact-form" name="contact-form">
+                <form method="post" action="/archive/mailer.php" class="contact-form" name="contact-form">
                     <div class="row">
                         <div class="col span-1-of-3">
                             <label for="name">Name</label>
@@ -413,8 +413,8 @@
         <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
-        <script src="thirdparty/js/jquery.waypoints.min.js"></script>
-        <script src="resources/js/script.js"></script>
+        <script src="/archive/thirdparty/js/jquery.waypoints.min.js"></script>
+        <script src="/archive/resources/js/script.js"></script>
     
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <!--
