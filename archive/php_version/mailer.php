@@ -11,7 +11,7 @@
 
     // Check the data. If bad data, then reload the page with the error code set.
     if (empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL) OR ($passphrase != 'NITNA')) {
-        header("Location: https://www.philipantin.com/index.php?success=-1#contact");
+        header("Location: https://philipantin.com/archive/index.php?success=-1#contact");
         exit;
     }
 
@@ -37,5 +37,5 @@
     mail($recipient, $subject, $email_content, $email_headers);
     
     // Redirect to the index.html page with success code
-    header("Location: https://www.philipantin.com/index.php?success=1#contact");
+    header("Location: https://philipantin.com/archive/index.php?success=1#contact");
 ?>
