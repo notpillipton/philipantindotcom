@@ -26,6 +26,7 @@
       "@resume/footer": ["libs/resume/footer/src/index.ts"],
       "@resume/old-competencies": ["libs/resume/old-competencies/src/index.ts"],
       "@shared/assets/*": ["libs/shared/assets/*"],
+      "@shared/i18n": ["libs/shared/i18n.ts"],
       "@shared/theme": ["libs/shared/theme.ts"],
       "@shared/theme-tokens": ["libs/shared/theme-tokens.ts"],
       "@shell/contact-form": ["libs/shell/contact-form/src/index.ts"],

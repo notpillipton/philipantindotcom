@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -8,7 +8,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
 import navData from '@shared/assets/nav-items.json';
+import { I18nService } from '../i18n.service';
+import { TranslatePipe } from '../translate.pipe';
+import { SupportedLanguage } from '@shared/i18n';
 
 @Component({
   selector: 'lib-header',
@@ -19,7 +24,10 @@ import navData from '@shared/assets/nav-items.json';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    MatDividerModule,
+    TranslatePipe
   ],
   template: `
     <mat-toolbar class="sticky-header" [class.hidden]="isHidden">
@@ -32,7 +40,7 @@ import navData from '@shared/assets/nav-items.json';
 
         <!-- Mobile Button -->
         <div class="mobile-menu-btn">
-          <button mat-icon-button (click)="drawer.toggle()">
+          <button mat-icon-button (click)="drawer.toggle()" aria-label="Open menu">
             <mat-icon>menu</mat-icon>
           </button>
         </div>
@@ -40,8 +48,21 @@ import navData from '@shared/assets/nav-items.json';
         <!-- Desktop Nav -->
         <div class="desktop-nav">
           <button mat-button *ngFor="let item of navItems" (click)="scrollToSection(item.target, item.isRoute)">
-            {{ item.label | uppercase }}
+            {{ (navKeyMap[item.label] ? (navKeyMap[item.label] | translate) : item.label) | uppercase }}
           </button>
+
+          <!-- Language Selector -->
+          <button mat-button [matMenuTriggerFor]="langMenu" class="lang-btn" aria-label="Select language">
+            <mat-icon class="lang-icon">language</mat-icon>
+            <span class="lang-code">{{ i18n.currentLanguage() | uppercase }}</span>
+            <mat-icon class="dropdown-icon">arrow_drop_down</mat-icon>
+          </button>
+          <mat-menu #langMenu="matMenu">
+            <button mat-menu-item *ngFor="let lang of i18n.supportedLanguages" (click)="selectLanguage(lang.code)">
+              <span class="flag-icon">{{ lang.flag }}</span>
+              <span>{{ lang.label }}</span>
+            </button>
+          </mat-menu>
         </div>
       </div>
     </mat-toolbar>
@@ -54,9 +75,29 @@ import navData from '@shared/assets/nav-items.json';
         </div>
         <mat-nav-list>
           <a mat-list-item *ngFor="let item of navItems" (click)="scrollToSection(item.target, item.isRoute); drawer.close()">
-            <span matListItemTitle>{{ item.label }}</span>
+            <span matListItemTitle>{{ navKeyMap[item.label] ? (navKeyMap[item.label] | translate) : item.label }}</span>
           </a>
         </mat-nav-list>
+
+        <mat-divider></mat-divider>
+
+        <div class="drawer-lang-section">
+          <div class="drawer-lang-title">
+            <mat-icon>language</mat-icon>
+            <span>Language</span>
+          </div>
+          <div class="drawer-lang-buttons">
+            <button
+              mat-stroked-button
+              *ngFor="let lang of i18n.supportedLanguages"
+              [color]="i18n.currentLanguage() === lang.code ? 'primary' : undefined"
+              [class.active-lang]="i18n.currentLanguage() === lang.code"
+              (click)="selectLanguage(lang.code); drawer.close()"
+            >
+              {{ lang.flag }} {{ lang.code | uppercase }}
+            </button>
+          </div>
+        </div>
       </mat-sidenav>
     </mat-sidenav-container>
   `,
@@ -114,6 +155,36 @@ import navData from '@shared/assets/nav-items.json';
       color: var(--theme-primary-main);
     }
 
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0 8px;
+    }
+
+    .lang-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+
+    .lang-code {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .dropdown-icon {
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+      margin-left: -4px;
+    }
+
+    .flag-icon {
+      margin-right: 8px;
+      font-size: 16px;
+    }
+
     .mobile-menu-btn {
       display: block;
       color: var(--theme-text-primary);
@@ -122,7 +193,8 @@ import navData from '@shared/assets/nav-items.json';
     @media (min-width: 900px) {
       .desktop-nav {
         display: flex;
-        gap: 24px;
+        gap: 16px;
+        align-items: center;
       }
       .mobile-menu-btn {
         display: none;
@@ -167,13 +239,50 @@ import navData from '@shared/assets/nav-items.json';
       color: var(--theme-primary-main);
       background-color: rgba(0, 0, 0, 0.04);
     }
+
+    .drawer-lang-section {
+      padding: 16px;
+    }
+
+    .drawer-lang-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--theme-text-secondary, #666);
+      margin-bottom: 12px;
+    }
+
+    .drawer-lang-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .drawer-lang-buttons button {
+      flex: 1;
+      font-size: 12px;
+      padding: 0 4px;
+    }
+
+    .active-lang {
+      font-weight: bold;
+      border-color: var(--theme-primary-main) !important;
+    }
   `]
 })
 export class Header implements OnInit {
+  i18n = inject(I18nService);
   navItems = navData.navItems;
   isHidden = false;
   private lastScrollPosition = 0;
   isHome = false;
+
+  readonly navKeyMap: Record<string, string> = {
+    'About Philip': 'nav.about',
+    'Competencies': 'nav.competencies',
+    'Contact Philip': 'nav.contact',
+    'Time Warp': 'nav.past',
+  };
 
   constructor(private router: Router) {
     this.router.events.pipe(
@@ -200,6 +309,10 @@ export class Header implements OnInit {
 
   ngOnInit() {
     this.isHome = this.router.url === '/' || this.router.url.startsWith('/#');
+  }
+
+  selectLanguage(lang: SupportedLanguage) {
+    this.i18n.setLanguage(lang);
   }
 
   @HostListener('window:scroll')

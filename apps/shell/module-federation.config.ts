@@ -14,7 +14,7 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: [['resume', 'http://localhost:4202/remoteEntry.js']],
+  remotes: [],
   shared: (name, config) => {
     return false;
   },

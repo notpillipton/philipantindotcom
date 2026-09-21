@@ -3,9 +3,13 @@ import { Box, Container, Typography, Button } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from 'react-router-dom';
 import HistoryIcon from '@mui/icons-material/History';
+import { useTranslation, Trans } from 'react-i18next';
+import '@shared/i18n';
 
 export const Past: React.FC = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
+
     return (
         <Box component="section" id="past" sx={{ py: 8, bgcolor: '#ffffff', minHeight: '100vh', position: 'relative' }}>
             <Container maxWidth="lg">
@@ -20,7 +24,7 @@ export const Past: React.FC = () => {
                         '&:hover': { color: 'primary.main' }
                     }}
                 >
-                    Back
+                    {t('past.back')}
                 </Button>
                 <Box sx={{ 
                     textAlign: 'center', 
@@ -33,11 +37,11 @@ export const Past: React.FC = () => {
                     boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
                 }}>
                     <Typography variant="h4" component="div" gutterBottom sx={{ fontSize: '180%', textTransform: 'uppercase', mb: 2 }}>
-                        "How it started"
+                        {t('past.startedTitle')}
                     </Typography>
                     <Box sx={{ width: '100px', height: '2px', bgcolor: 'primary.main', mx: 'auto', mb: 4 }} />
                     <Typography variant="body1" component="div" sx={{ fontSize: '110%', lineHeight: 1.45, mb: 4 }}>
-                        This website started in 2018, when Philip was first transitioning his career from education to software engineering. He hand-coded it using PHP, adapting a template from an HTML and CSS course that he took to gain basic skills.
+                        {t('past.startedText')}
                     </Typography>
                 </Box>
                 <Box sx={{ 
@@ -51,11 +55,11 @@ export const Past: React.FC = () => {
                     boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
                 }}>
                     <Typography variant="h4" component="div" gutterBottom sx={{ fontSize: '180%', textTransform: 'uppercase', mb: 2 }}>
-                        "How it's going"
+                        {t('past.goingTitle')}
                     </Typography>
                     <Box sx={{ width: '100px', height: '2px', bgcolor: 'primary.main', mx: 'auto', mb: 4 }} />
                     <Typography variant="body1" component="div" sx={{ fontSize: '110%', lineHeight: 1.45, mb: 4 }}>
-                        Philip heavily revised the site in 2026.<br />It now uses an Angular shell and header as a microfrontend, serving React components for most of the content. State passes between the two frameworks. The monorepo codebase is managed using Nx.
+                        <Trans i18nKey="past.goingText" components={{ br: <br /> }} />
                     </Typography>
                 </Box>
                 <Box sx={{ 
@@ -69,7 +73,7 @@ export const Past: React.FC = () => {
                     boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
                 }}>
                     <Typography variant="body1" component="div" sx={{ fontSize: '110%', lineHeight: 1.45, mb: 4 }}>
-                        You can see the original <em>hand-coded, PHP version</em> using the link below. It's a fun way to compare how his technical experience has evolved.
+                        <Trans i18nKey="past.archiveNotice" components={{ em: <em /> }} />
                     </Typography>
                     
                     <Box sx={{ mt: 4 }}>
@@ -81,7 +85,7 @@ export const Past: React.FC = () => {
                             rel="noopener noreferrer"
                             startIcon={<HistoryIcon />}
                         >
-                            Blast Me to the Past!
+                            {t('past.blastButton')}
                         </Button>
                     </Box>
                 </Box>

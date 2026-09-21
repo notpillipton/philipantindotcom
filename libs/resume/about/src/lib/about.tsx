@@ -8,38 +8,18 @@ import DownloadIcon from '@mui/icons-material/Download';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import Button from '@mui/material/Button';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-
-const assets = [
-    {
-        icon: <DnsIcon sx={{ fontSize: 50, color: 'primary.main', mb: 1 }} />,
-        title: 'Software Architecture & Engineering',
-        description: "Philip designs and implements web applications at enterprise scale. He works closely with stakeholders, analysts, and designers to understand needs and refine requirements. He has a proven track record of launching mission-critical systems for logistics and operations."
-    },
-    {
-        icon: <GroupsIcon sx={{ fontSize: 50, color: 'primary.main', mb: 1 }} />,
-        title: 'Technical Leadership & Mentoring',
-        description: "Leveraging his background in education and nonprofit leadership, Philip excels at leading engineering teams and fostering a culture of continuous learning. He has successfully mentored junior developers into high-performing contributors."
-    },
-    {
-        icon: <SchoolIcon sx={{ fontSize: 50, color: 'primary.main', mb: 1 }} />,
-        title: 'Education & Communication',
-        description: "With over 20 years of college-level teaching experience, Philip possesses an exceptional ability to communicate complex technical concepts effectively. He is a seasoned public speaker who thrives at the intersection of clarity and innovation."
-    },
-    {
-        icon: <PsychologyIcon sx={{ fontSize: 50, color: 'primary.main', mb: 1 }} />,
-        title: 'Analytic philosophy and ethics',
-        description: "His graduate studies in philosophy provide a foundation in formal logic, conceptual clarity, and rigorous critical thinking. These skills inform his understanding of complex systems and how they evolve."
-    }
-];
+import { useTranslation } from 'react-i18next';
+import '@shared/i18n';
 
 export const About: React.FC = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
     const [textIndex, setTextIndex] = useState(0);
 
     const rotatingHeroText = [
-        "Programmer ~ Professor ~ Philosopher",
-        "Engineer ~ Educator ~ Ethicist"
+        t('hero.roles.0'),
+        t('hero.roles.1')
     ];
 
     useEffect(() => {
@@ -57,6 +37,29 @@ export const About: React.FC = () => {
         }
     };
 
+    const assets = [
+        {
+            icon: <DnsIcon sx={{ fontSize: 50, color: 'primary.main', mb: 1 }} />,
+            title: t('about.assets.architecture.title'),
+            description: t('about.assets.architecture.description')
+        },
+        {
+            icon: <GroupsIcon sx={{ fontSize: 50, color: 'primary.main', mb: 1 }} />,
+            title: t('about.assets.leadership.title'),
+            description: t('about.assets.leadership.description')
+        },
+        {
+            icon: <SchoolIcon sx={{ fontSize: 50, color: 'primary.main', mb: 1 }} />,
+            title: t('about.assets.education.title'),
+            description: t('about.assets.education.description')
+        },
+        {
+            icon: <PsychologyIcon sx={{ fontSize: 50, color: 'primary.main', mb: 1 }} />,
+            title: t('about.assets.philosophy.title'),
+            description: t('about.assets.philosophy.description')
+        }
+    ];
+
     return (
         <>
             <Box
@@ -70,7 +73,7 @@ export const About: React.FC = () => {
                     justifyContent: 'center',
                     color: 'white',
                     textAlign: 'center',
-                    marginTop: '-64px' // Offset existing AppBar height involved in sticky positioning if needed, or just let it be. 
+                    marginTop: '-64px'
                 }}
             >
                 <Container>
@@ -78,7 +81,7 @@ export const About: React.FC = () => {
                         {rotatingHeroText[textIndex]}
                     </Typography>
                     <Typography variant="h5" component="div" sx={{ mb: 4, fontWeight: 300 }}>
-                        Enabling human competence in an increasingly intricate digital world.
+                        {t('hero.subtitle')}
                     </Typography>
                     <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
                         <Button
@@ -90,7 +93,7 @@ export const About: React.FC = () => {
                                 window.dispatchEvent(new Event('popstate'));
                             }}
                         >
-                            Get this guy on the line!
+                            {t('hero.ctaContact')}
                         </Button>
                         <Button
                             variant="outlined"
@@ -98,7 +101,7 @@ export const About: React.FC = () => {
                             sx={{ color: 'primary.main', borderColor: 'primary.main', borderWidth: 2, '&:hover': { borderWidth: 2, borderColor: '#cf6d17', color: '#cf6d17' } }}
                             onClick={() => scrollToSection('bio')}
                         >
-                            Show me more
+                            {t('hero.ctaMore')}
                         </Button>
                     </Box>
                 </Container>
@@ -108,14 +111,14 @@ export const About: React.FC = () => {
                 <Container maxWidth="lg">
                     <Box sx={{ textAlign: 'center', mb: 6, width: { xs: '100%', md: '70%' }, mx: 'auto' }}>
                         <Typography variant="h3" component="div" gutterBottom sx={{ fontSize: '250%', textTransform: 'uppercase', mb: 2 }}>
-                            Who Is Philip? What Can He Do?
+                            {t('about.title')}
                         </Typography>
                         <Box sx={{ width: '100px', height: '2px', bgcolor: 'primary.main', mx: 'auto', mb: 4 }} />
                         <Typography variant="body1" component="div" sx={{ fontSize: '160%', lineHeight: 1.45, mb: 4, fontStyle: 'italic', fontWeight: 300 }}>
-                            Insatiable learner. Effective communicator. Perceptive collaborator.
+                            {t('about.tagline')}
                         </Typography>
                         <Typography variant="body1" component="div" sx={{ fontSize: '160%', lineHeight: 1.45, mb: 4, fontWeight: 300 }}>
-                            Philip draws upon his background in engineering, ethics, and nonprofit leadership to solve complex challenges in software architecture and technical leadership.
+                            {t('about.intro')}
                         </Typography>
                     </Box>
 
@@ -135,12 +138,12 @@ export const About: React.FC = () => {
                         <Button
                             variant="contained"
                             color="primary"
-                            href="/data/Antin_Resume_Technical_Leadership_2026-08.pdf"
-                            download="Antin_Resume_Technical_Leadership_2026-08.pdf"
+                            href="/data/Antin_Resume_Technical_Leadership_2026-09.pdf"
+                            download="Antin_Resume_Technical_Leadership_2026-09.pdf"
                             target="_blank"
                             startIcon={<DownloadIcon />}
                         >
-                            Download Philip's Resume
+                            {t('about.downloadResume')}
                         </Button>
                         <Button
                             variant="outlined"
@@ -149,7 +152,7 @@ export const About: React.FC = () => {
                             startIcon={<VisibilityIcon />}
                             sx={{ borderWidth: 2, '&:hover': { borderWidth: 2 } }}
                         >
-                            See Philip's Competencies
+                            {t('about.seeCompetencies')}
                         </Button>
                     </Box>
                 </Container>

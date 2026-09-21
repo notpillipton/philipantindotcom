@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "about": "About Philip",
+    "competencies": "Competencies",
+    "contact": "Contact Philip",
+    "past": "Time Warp"
+  },
+  "hero": {
+    "roles": [
+      "Programmer ~ Professor ~ Philosopher",
+      "Engineer ~ Educator ~ Ethicist"
+    ],
+    "subtitle": "Enabling human competence in an increasingly intricate digital world.",
+    "ctaContact": "Get this guy on the line!",
+    "ctaMore": "Show me more"
+  },
+  "about": {
+    "title": "Who Is Philip? What Can He Do?",
+    "tagline": "Insatiable learner. Effective communicator. Perceptive collaborator.",
+    "intro": "Philip draws upon his background in engineering, ethics, and nonprofit leadership to solve complex challenges in software architecture and technical leadership.",
+    "assets": {
+      "architecture": {
+        "title": "Software Architecture & Engineering",
+        "description": "Philip designs and implements web applications at enterprise scale. He works closely with stakeholders, analysts, and designers to understand needs and refine requirements. He has a proven track record of launching mission-critical systems for logistics and operations."
+      },
+      "leadership": {
+        "title": "Technical Leadership & Mentoring",
+        "description": "Leveraging his background in education and nonprofit leadership, Philip excels at leading engineering teams and fostering a culture of continuous learning. He has successfully mentored junior developers into high-performing contributors."
+      },
+      "education": {
+        "title": "Education & Communication",
+        "description": "With over 20 years of college-level teaching experience, Philip possesses an exceptional ability to communicate complex technical concepts effectively. He is a seasoned public speaker who thrives at the intersection of clarity and innovation."
+      },
+      "philosophy": {
+        "title": "Analytic philosophy and ethics",
+        "description": "His graduate studies in philosophy provide a foundation in formal logic, conceptual clarity, and rigorous critical thinking. These skills inform his understanding of complex systems and how they evolve."
+      }
+    },
+    "downloadResume": "Download Philip's Resume",
+    "seeCompetencies": "See Philip's Competencies"
+  },
+  "competencies": {
+    "back": "Back",
+    "title": "Core Competencies",
+    "subtitle": "A diverse set of skills spanning technical implementation, team leadership, and abstract problem solving<br/>... with a smattering of artistic flair.",
+    "categories": {
+      "Technical": "Technical",
+      "Philosophical": "Philosophical",
+      "Artistic": "Artistic",
+      "Interpersonal": "Interpersonal"
+    },
+    "oldCompetencies": {
+      "comp01": "Successfully developed, launched, improved, and maintained three major enterprise applications",
+      "comp02": "Guided coding standards, tooling, automated testing, DevOps, and UI security flows",
+      "comp03": "Collaborated on enterprise AI policies and adoption strategies",
+      "comp04": "Matured state management strategies alongside application complexity",
+      "comp05": "Developed and launched an enterprise mentoring program and forged highly effective teams",
+      "comp06": "Coached public speaking with ToastMasters and taught internal classes for developers",
+      "comp07": "Collaborated in an Agile enviornment with designers, product owners, and stakeholders",
+      "comp08": "Pursued graduate studies in analytic philosophy and ethics"
+    }
+  },
+  "past": {
+    "back": "Back",
+    "startedTitle": "\"How it started\"",
+    "startedText": "This website started in 2018, when Philip was first transitioning his career from education to software engineering. He hand-coded it using PHP, adapting a template from an HTML and CSS course that he took to gain basic skills.",
+    "goingTitle": "\"How it's going\"",
+    "goingText": "Philip heavily revised the site in 2026.<br />It now uses an Angular shell and header as a microfrontend, serving React components for most of the content. State passes between the two frameworks. The monorepo codebase is managed using Nx.",
+    "archiveNotice": "You can see the original <em>hand-coded, PHP version</em> using the link below. It's a fun way to compare how his technical experience has evolved.",
+    "blastButton": "Blast Me to the Past!"
+  },
+  "contact": {
+    "dialogTitle": "Philip would love to hear from you!",
+    "nameLabel": "Name *",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "Your email",
+    "findUsLabel": "How did you find this site?",
+    "findUsOptions": {
+      "jobapp": "Job application or resume",
+      "linkedin": "LinkedIn",
+      "search": "Search engine",
+      "friend": "Personal recommendation",
+      "other": "Other"
+    },
+    "followupLabel": "Follow-up requested?",
+    "followupYes": "Yes, please",
+    "messageLabel": "Drop Philip a line *",
+    "messagePlaceholder": "Your message",
+    "passphraseLabel": "Anti-bot: Spell Philip's last name, backwards, ALL CAPS *",
+    "passphrasePlaceholder": "Passphrase",
+    "cancel": "Cancel",
+    "sending": "Sending...",
+    "sendIt": "Send it!",
+    "snackValidation": "Please fill out all required fields properly.",
+    "snackPassphrase": "Incorrect passphrase! Hint: Philip's last name backwards, ALL CAPS.",
+    "snackSuccess": "Your message was sent! Thank you!",
+    "snackError": "Your message was not sent. Please check for errors.",
+    "close": "Close"
+  },
+  "footer": {
+    "copyright": "Copyright © {{year}} by Philip Antin. All rights reserved."
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français"
+  }
+}

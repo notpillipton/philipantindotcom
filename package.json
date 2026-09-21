@@ -104,8 +104,10 @@
     "@mui/styled-engine": "^7.3.9",
     "@mui/system": "^7.3.9",
     "@nx/angular": "^22.6.3",
+    "i18next": "^26.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^17.0.14",
     "react-router-dom": "^7.13.2",
     "rxjs": "~7.8.0"
   }

@@ -2,10 +2,13 @@ import React, { useState, useMemo } from 'react';
 import { Box, Chip, Container, Typography, Button } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 import data from './assets/competencies.json';
 import { OldCompetencies } from '@resume/old-competencies';
+import '@shared/i18n';
 
 export const Competencies: React.FC = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -39,15 +42,15 @@ export const Competencies: React.FC = () => {
                             '&:hover': { color: 'primary.main' }
                         }}
                     >
-                        Back
+                        {t('competencies.back')}
                     </Button>
                     <Box sx={{ textAlign: 'center', mb: 6 }}>
                         <Typography variant="h1" component="div" gutterBottom sx={{ fontSize: '180%', textTransform: 'uppercase', mb: 2 }}>
-                            Core Competencies
+                            {t('competencies.title')}
                         </Typography>
                         <Box sx={{ width: '100px', height: '2px', bgcolor: 'primary.main', mx: 'auto', mb: 4 }} />
                         <Typography variant="body1" sx={{ fontSize: '140%', lineHeight: 1.45, mb: 4 }}>
-                            A diverse set of skills spanning technical implementation, team leadership, and abstract problem solving<br/>... with a smattering of artistic flair.
+                            <Trans i18nKey="competencies.subtitle" components={{ br: <br /> }} />
                         </Typography>
                     </Box>
 
@@ -79,7 +82,7 @@ export const Competencies: React.FC = () => {
                                         transition: 'all 0.3s ease'
                                     }}
                                 >
-                                    {cat}
+                                    {t(`competencies.categories.${cat}`, cat)}
                                 </Button>
                             );
                         })}
