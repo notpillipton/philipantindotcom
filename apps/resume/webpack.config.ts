@@ -4,8 +4,10 @@ import { withModuleFederation } from '@nx/module-federation/webpack.js';
 
 import baseConfig from './module-federation.config';
 
+const mfConfig = (baseConfig as any).default ?? baseConfig;
 const config = {
-  ...baseConfig,
+  ...mfConfig,
+  name: mfConfig.name || 'resume',
 };
 
 // Nx plugins for webpack to build config object from Nx options and context.

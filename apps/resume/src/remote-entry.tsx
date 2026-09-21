@@ -3,7 +3,9 @@ import * as ReactDOM from 'react-dom/client';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
+import { I18nextProvider } from 'react-i18next';
 import theme from '@shared/theme';
+import i18next, { LOCALE_CHANGE_EVENT } from '@shared/i18n';
 import App from './app/app';
 
 import { injectThemeVariables } from '@shared/theme-tokens';
@@ -11,6 +13,7 @@ import '@shared/assets/theme-variables.css';
 
 // Inject shared theme tokens into the global CSS Scope
 injectThemeVariables();
+
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean, error: any}> {
   constructor(props: any) {
     super(props);
@@ -39,25 +42,36 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasErr
 
 class ResumeElement extends HTMLElement {
   private root!: ReactDOM.Root;
+  private handleLocaleChange = (e: any) => {
+    const lang = e?.detail?.lang;
+    if (lang && i18next.language !== lang) {
+      i18next.changeLanguage(lang);
+    }
+  };
 
   connectedCallback() {
+    window.addEventListener(LOCALE_CHANGE_EVENT, this.handleLocaleChange);
+
     const mountPoint = document.createElement('div');
     this.appendChild(mountPoint); // Render using Light DOM for style cascading
 
     this.root = createRoot(mountPoint);
     this.root.render(
       <ErrorBoundary>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </ThemeProvider>
+        <I18nextProvider i18n={i18next}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </ThemeProvider>
+        </I18nextProvider>
       </ErrorBoundary>
     );
   }
 
   disconnectedCallback() {
+    window.removeEventListener(LOCALE_CHANGE_EVENT, this.handleLocaleChange);
     this.root.unmount();
   }
 }

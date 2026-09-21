@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "about": "À propos de Philip",
+    "competencies": "Compétences",
+    "contact": "Contacter Philip",
+    "past": "Machine à Remonter le Temps"
+  },
+  "hero": {
+    "roles": [
+      "Programmeur ~ Professeur ~ Philosophe",
+      "Ingénieur ~ Éducateur ~ Éthicien"
+    ],
+    "subtitle": "Favoriser les compétences humaines dans un monde numérique de plus en plus intriqué.",
+    "ctaContact": "Contactez-le !",
+    "ctaMore": "En savoir plus"
+  },
+  "about": {
+    "title": "Qui est Philip ? Que peut-il faire ?",
+    "tagline": "Apprenant insatiable. Communicateur efficace. Collaborateur perspicace.",
+    "intro": "Philip s'appuie sur son parcours en ingénierie, en éthique et en direction d'organisations à but non lucratif pour résoudre des défis complexes d'architecture logicielle et de leadership technique.",
+    "assets": {
+      "architecture": {
+        "title": "Architecture et Ingénierie Logicielle",
+        "description": "Philip conçoit et met en œuvre des applications web à l'échelle de l'entreprise. Il travaille en étroite collaboration avec les parties prenantes, les analystes et les designers pour cerner les besoins et affiner les exigences. Il possède une solide expérience dans le lancement de systèmes stratégiques pour la logistique et les opérations."
+      },
+      "leadership": {
+        "title": "Leadership Technique et Mentorat",
+        "description": "Tirant parti de son expérience dans l'enseignement et la direction associative, Philip excelle à diriger des équipes d'ingénierie et à promouvoir une culture d'apprentissage continu. Il a accompagné avec succès des développeurs juniors pour en faire des contributeurs performants."
+      },
+      "education": {
+        "title": "Enseignement et Communication",
+        "description": "Fort de plus de 20 ans d'expérience dans l'enseignement universitaire, Philip possède une aptitude exceptionnelle à vulgariser des concepts techniques complexes. C'est un orateur aguerri qui s'épanouit au carrefour de la clarté et de l'innovation."
+      },
+      "philosophy": {
+        "title": "Philosophie analytique et éthique",
+        "description": "Ses études universitaires supérieures en philosophie lui confèrent une maîtrise approfondie de la logique formelle, de la rigueur conceptuelle et de la pensée critique. Ces compétences enrichissent sa compréhension des systèmes complexes et de leur évolution."
+      }
+    },
+    "downloadResume": "Télécharger le CV de Philip",
+    "seeCompetencies": "Découvrir les Compétences de Philip"
+  },
+  "competencies": {
+    "back": "Retour",
+    "title": "Compétences Clés",
+    "subtitle": "Un éventail diversifié de compétences alliant réalisation technique, direction d'équipe et résolution abstraite de problèmes<br/>... avec une touche de sensibilité artistique.",
+    "categories": {
+      "Technical": "Technique",
+      "Philosophical": "Philosophique",
+      "Artistic": "Artistique",
+      "Interpersonal": "Interpersonnel"
+    },
+    "oldCompetencies": {
+      "comp01": "A développé, déployé, perfectionné et maintenu avec succès trois applications d'entreprise d'envergure",
+      "comp02": "A orienté les normes de code, l'outillage, les tests automatisés, le DevOps et les flux de sécurité de l'interface",
+      "comp03": "A collaboré aux politiques d'entreprise relatives à l'IA et aux stratégies d'adoption",
+      "comp04": "A fait évoluer les stratégies de gestion d'état au rythme de la complexité applicative",
+      "comp05": "A conçu et mis en place un programme de mentorat d'entreprise, forgeant des équipes hautement performantes",
+      "comp06": "A encadré la prise de parole en public avec ToastMasters et dispensé des formations internes pour développeurs",
+      "comp07": "A collaboré dans un cadre Agile avec designers, chefs de produit et parties prenantes",
+      "comp08": "A mené des études de cycles supérieurs en philosophie analytique et en éthique"
+    }
+  },
+  "past": {
+    "back": "Retour",
+    "startedTitle": "\"Comment tout a commencé\"",
+    "startedText": "Ce site web a vu le jour en 2018, lorsque Philip réorientait sa carrière de l'enseignement vers l'ingénierie logicielle. Il l'a codé à la main en PHP, en adaptant le modèle d'un cours HTML et CSS qu'il suivait pour acquérir les bases.",
+    "goingTitle": "\"Où en sommes-nous\"",
+    "goingText": "Philip a profondément remanié le site en 2026.<br />Il intègre désormais un shell et un en-tête Angular sous forme de micro-frontend, délivrant des composants React pour la majeure partie du contenu. L'état circule entre les deux frameworks. Le monorepo est géré avec Nx.",
+    "archiveNotice": "Vous pouvez consulter la version d'origine <em>codée à la main en PHP</em> via le lien ci-dessous. C'est une façon originale de constater l'évolution de ses compétences techniques.",
+    "blastButton": "Retourner vers le Passé !"
+  },
+  "contact": {
+    "dialogTitle": "Philip serait ravi d'avoir de vos nouvelles !",
+    "nameLabel": "Nom *",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "Courriel *",
+    "emailPlaceholder": "Votre adresse courriel",
+    "findUsLabel": "Comment avez-vous découvert ce site ?",
+    "findUsOptions": {
+      "jobapp": "Candidature ou CV",
+      "linkedin": "LinkedIn",
+      "search": "Moteur de recherche",
+      "friend": "Recommandation personnelle",
+      "other": "Autre"
+    },
+    "followupLabel": "Souhaitez-vous un suivi ?",
+    "followupYes": "Oui, s'il vous plaît",
+    "messageLabel": "Écrire un mot à Philip *",
+    "messagePlaceholder": "Votre message",
+    "passphraseLabel": "Anti-robot : Écrivez le nom de famille de Philip à l'envers, TOUT EN MAJUSCULES *",
+    "passphrasePlaceholder": "Mot de passe",
+    "cancel": "Annuler",
+    "sending": "Envoi en cours...",
+    "sendIt": "Envoyer !",
+    "snackValidation": "Veuillez renseigner convenablement tous les champs obligatoires.",
+    "snackPassphrase": "Mot de passe incorrect ! Indice : Le nom de famille de Philip à l'envers, TOUT EN MAJUSCULES.",
+    "snackSuccess": "Votre message a été envoyé ! Merci !",
+    "snackError": "Votre message n'a pas pu être envoyé. Veuillez vérifier les erreurs éventuelles.",
+    "close": "Fermer"
+  },
+  "footer": {
+    "copyright": "Copyright © {{year}} par Philip Antin. Tous droits réservés."
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français"
+  }
+}

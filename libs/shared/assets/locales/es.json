@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "about": "Acerca de Philip",
+    "competencies": "Competencias",
+    "contact": "Contactar a Philip",
+    "past": "Túnel del Tiempo"
+  },
+  "hero": {
+    "roles": [
+      "Programador ~ Profesor ~ Filósofo",
+      "Ingeniero ~ Educador ~ Especialista en Ética"
+    ],
+    "subtitle": "Facilitando la competencia humana en un mundo digital cada vez más complejo.",
+    "ctaContact": "¡Ponte en contacto con él!",
+    "ctaMore": "Saber más"
+  },
+  "about": {
+    "title": "¿Quién es Philip? ¿Qué puede hacer?",
+    "tagline": "Aprendiz insaciable. Comunicador eficaz. Colaborador perspicaz.",
+    "intro": "Philip se apoya en su trayectoria en ingeniería, ética y liderazgo en organizaciones sin fines de lucro para resolver desafíos complejos en arquitectura de software y liderazgo técnico.",
+    "assets": {
+      "architecture": {
+        "title": "Arquitectura e Ingeniería de Software",
+        "description": "Philip diseña e implementa aplicaciones web a escala empresarial. Trabaja en estrecha colaboración con interesados, analistas y diseñadores para comprender necesidades y perfeccionar requisitos. Cuenta con un historial comprobado en el lanzamiento de sistemas de misión crítica para logística y operaciones."
+      },
+      "leadership": {
+        "title": "Liderazgo Técnico y Mentoría",
+        "description": "Aprovechando su experiencia en educación y dirección comunitaria, Philip destaca liderando equipos de ingeniería y fomentando una cultura de aprendizaje continuo. Ha guiado con éxito a desarrolladores junior para convertirlos en colaboradores de alto rendimiento."
+      },
+      "education": {
+        "title": "Educación y Comunicación",
+        "description": "Con más de 20 años de experiencia docente a nivel universitario, Philip posee una habilidad excepcional para comunicar conceptos técnicos complejos con claridad. Es un orador experimentado que prospera en la intersección de la claridad y la innovación."
+      },
+      "philosophy": {
+        "title": "Filosofía analítica y ética",
+        "description": "Sus estudios de posgrado en filosofía proporcionan una base sólida en lógica formal, claridad conceptual y pensamiento crítico riguroso. Estas destrezas enriquecen su comprensión de los sistemas complejos y su evolución."
+      }
+    },
+    "downloadResume": "Descargar el Currículum de Philip",
+    "seeCompetencies": "Ver las Competencias de Philip"
+  },
+  "competencies": {
+    "back": "Volver",
+    "title": "Competencias Principales",
+    "subtitle": "Un conjunto diverso de habilidades que abarca implementación técnica, liderazgo de equipos y resolución abstracta de problemas<br/>... con un toque de talento artístico.",
+    "categories": {
+      "Technical": "Técnico",
+      "Philosophical": "Filosófico",
+      "Artistic": "Artístico",
+      "Interpersonal": "Interpersonal"
+    },
+    "oldCompetencies": {
+      "comp01": "Desarrolló, lanzó, mejoró y mantuvo con éxito tres importantes aplicaciones empresariales",
+      "comp02": "Orientó estándares de código, herramientas, pruebas automatizadas, DevOps y flujos de seguridad de interfaz",
+      "comp03": "Colaboró en políticas empresariales de IA y estrategias de adopción",
+      "comp04": "Evolucionó estrategias de gestión de estado a la par de la complejidad de las aplicaciones",
+      "comp05": "Desarrolló y lanzó un programa empresarial de mentoría forjando equipos altamente eficaces",
+      "comp06": "Entrenó en oratoria pública con ToastMasters e impartió clases internas para desarrolladores",
+      "comp07": "Colaboró en un entorno Ágil con diseñadores, propietarios de producto e interesados",
+      "comp08": "Cursó estudios de posgrado en filosofía analítica y ética"
+    }
+  },
+  "past": {
+    "back": "Volver",
+    "startedTitle": "\"Cómo empezó\"",
+    "startedText": "Este sitio web comenzó en 2018, cuando Philip estaba en plena transición profesional de la educación a la ingeniería de software. Lo programó a mano utilizando PHP, adaptando una plantilla de un curso de HTML y CSS que tomó para adquirir competencias fundamentales.",
+    "goingTitle": "\"Cómo va\"",
+    "goingText": "Philip rediseñó exhaustivamente el sitio en 2026.<br />Ahora utiliza un shell y encabezado en Angular como microfrontend, sirviendo componentes React para la mayor parte del contenido. El estado fluye entre ambos frameworks. La base de código monorepo se gestiona con Nx.",
+    "archiveNotice": "Puedes ver la versión original <em>programada a mano en PHP</em> mediante el siguiente enlace. Es una forma amena de comparar cómo ha evolucionado su experiencia técnica.",
+    "blastButton": "¡Viajar al Pasado!"
+  },
+  "contact": {
+    "dialogTitle": "¡A Philip le encantaría saber de ti!",
+    "nameLabel": "Nombre *",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "Correo electrónico *",
+    "emailPlaceholder": "Tu correo electrónico",
+    "findUsLabel": "¿Cómo encontraste este sitio?",
+    "findUsOptions": {
+      "jobapp": "Solicitud de empleo o currículum",
+      "linkedin": "LinkedIn",
+      "search": "Motor de búsqueda",
+      "friend": "Recomendación personal",
+      "other": "Otro"
+    },
+    "followupLabel": "¿Deseas seguimiento?",
+    "followupYes": "Sí, por favor",
+    "messageLabel": "Escríbele a Philip *",
+    "messagePlaceholder": "Tu mensaje",
+    "passphraseLabel": "Anti-bot: Deletrea el apellido de Philip al revés, TODO EN MAYÚSCULAS *",
+    "passphrasePlaceholder": "Frase de contraseña",
+    "cancel": "Cancelar",
+    "sending": "Enviando...",
+    "sendIt": "¡Enviar!",
+    "snackValidation": "Por favor, completa correctamente todos los campos requeridos.",
+    "snackPassphrase": "¡Frase de contraseña incorrecta! Pista: El apellido de Philip al revés, TODO EN MAYÚSCULAS.",
+    "snackSuccess": "¡Tu mensaje ha sido enviado! ¡Gracias!",
+    "snackError": "No se pudo enviar tu mensaje. Por favor, revisa si hay errores.",
+    "close": "Cerrar"
+  },
+  "footer": {
+    "copyright": "Copyright © {{year}} por Philip Antin. Todos los derechos reservados."
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français"
+  }
+}
