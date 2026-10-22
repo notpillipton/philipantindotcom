@@ -1,10 +1,11 @@
-import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { App } from './app';
 import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { of, BehaviorSubject, Subject } from 'rxjs';
 import { Component } from '@angular/core';
 
+// eslint-disable-next-line @angular-eslint/component-selector
 @Component({
   selector: 'lib-header',
   standalone: true,
@@ -18,9 +19,11 @@ describe('App', () => {
   let mockDialog: any;
   let mockRouter: any;
   let queryParams: BehaviorSubject<any>;
+  let fragment: BehaviorSubject<string | null>;
 
   beforeEach(async () => {
     queryParams = new BehaviorSubject({});
+    fragment = new BehaviorSubject<string | null>(null);
     mockDialog = {
       open: jest.fn().mockReturnValue({
         afterClosed: () => of(true),
@@ -40,7 +43,8 @@ describe('App', () => {
         {
           provide: ActivatedRoute,
           useValue: {
-            queryParams: queryParams.asObservable()
+            queryParams: queryParams.asObservable(),
+            fragment: fragment.asObservable()
           }
         }
       ]
@@ -75,5 +79,10 @@ describe('App', () => {
     
     queryParams.next({ contact: 'false' });
     expect(mockDialogRef.close).toHaveBeenCalled();
+  });
+
+  it('should navigate to /past when fragment is past', () => {
+    fragment.next('past');
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/past']);
   });
 });

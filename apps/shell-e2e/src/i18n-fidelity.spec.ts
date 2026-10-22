@@ -50,7 +50,10 @@ async function crawlSiteData(page: Page, baseUrl: string) {
   const pastParagraphs = (await page.locator('#past .MuiTypography-body1').allInnerTexts())
     .map((t) => t.trim());
 
-  const pastArchiveBtn = (await page.locator('#past a[href*="archive"]').innerText()).trim();
+  const pastArchiveBtnLocator = page.locator('#past a[href*="archive"]');
+  const pastArchiveBtn = (await pastArchiveBtnLocator.count()) > 0
+    ? (await pastArchiveBtnLocator.first().innerText()).trim()
+    : null;
 
   // 4. Open Contact Modal
   await page.locator('.desktop-nav button:has-text("CONTACT PHILIP")').click();

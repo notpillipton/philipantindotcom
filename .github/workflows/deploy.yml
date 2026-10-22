@@ -26,10 +26,10 @@ jobs:
 
       - name: Prepare Deployment Directory
         run: |
-          mkdir -p dist/deploy/resume dist/deploy/archive
+          mkdir -p dist/deploy/resume
           cp -r dist/apps/shell/* dist/deploy/
+          [ -f apps/shell/public/.htaccess ] && cp apps/shell/public/.htaccess dist/deploy/ || true
           cp -r dist/apps/resume/* dist/deploy/resume/
-          cp -r archive/php_version/* dist/deploy/archive/
 
       - name: Deploy to Main Site via Rsync
         uses: Burnett01/rsync-deployments@7.0.1

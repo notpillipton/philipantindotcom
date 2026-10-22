@@ -36,4 +36,9 @@ export const appRoutes: Route[] = [
       elementName: 'resume-mfe',
     },
   },
+  {
+    path: 'archive',
+    redirectTo: 'past',
+    pathMatch: 'prefix',
+  },
 ];

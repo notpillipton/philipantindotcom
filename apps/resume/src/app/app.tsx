@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { About } from '@resume/about'
 import { Competencies } from '@resume/competencies'
@@ -19,6 +19,8 @@ export function App() {
         <Route path="/" element={<About />} />
         <Route path="/competencies" element={<Competencies />} />
         <Route path="/past" element={<Past />} />
+        <Route path="/archive/*" element={<Navigate to="/past" replace />} />
+        <Route path="/archive" element={<Navigate to="/past" replace />} />
       </Routes>
       <Footer />
     </Box>

@@ -22,8 +22,8 @@ export class App implements OnInit, OnDestroy {
   private dialogRef: MatDialogRef<ContactForm> | null = null;
 
   ngOnInit() {
-    this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(params => {
-      if (params['contact'] === 'true' && !this.dialogRef) {
+    this.route.queryParams?.pipe(takeUntil(this.destroy$)).subscribe(params => {
+      if (params && params['contact'] === 'true' && !this.dialogRef) {
         this.dialogRef = this.dialog.open(ContactForm, { width: '900px', maxWidth: '100vw' });
         
         this.dialogRef.afterClosed().subscribe(() => {
@@ -35,8 +35,14 @@ export class App implements OnInit, OnDestroy {
             replaceUrl: true
           });
         });
-      } else if (params['contact'] !== 'true' && this.dialogRef) {
+      } else if (params && params['contact'] !== 'true' && this.dialogRef) {
         this.dialogRef.close();
+      }
+    });
+
+    this.route.fragment?.pipe(takeUntil(this.destroy$)).subscribe(fragment => {
+      if (fragment === 'past') {
+        this.router.navigate(['/past']);
       }
     });
   }
