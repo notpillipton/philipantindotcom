@@ -66,8 +66,7 @@
     "startedText": "Ce site web a vu le jour en 2018, lorsque Philip réorientait sa carrière de l'enseignement vers l'ingénierie logicielle. Il l'a codé à la main en PHP, en adaptant le modèle d'un cours HTML et CSS qu'il suivait pour acquérir les bases.",
     "goingTitle": "\"Où en sommes-nous\"",
     "goingText": "Philip a profondément remanié le site en 2026.<br />Il intègre désormais un shell et un en-tête Angular sous forme de micro-frontend, délivrant des composants React pour la majeure partie du contenu. L'état circule entre les deux frameworks. Le monorepo est géré avec Nx.",
-    "archiveNotice": "Vous pouvez consulter la version d'origine <em>codée à la main en PHP</em> via le lien ci-dessous. C'est une façon originale de constater l'évolution de ses compétences techniques.",
-    "blastButton": "Retourner vers le Passé !"
+    "archiveNotice": "Philip proposait initialement un lien vers la <em>version codée à la main en PHP</em> de 2018. Cependant, en octobre 2026, l'archive PHP interactive a été définitivement retirée suite à l'annonce des vulnérabilités critiques « PHP2Shell » (CVE-2026-109618 et CVE-2026-109619). Le code source d'origine demeure soigneusement conservé dans le dépôt GitHub."
   },
   "contact": {
     "dialogTitle": "Philip serait ravi d'avoir de vos nouvelles !",

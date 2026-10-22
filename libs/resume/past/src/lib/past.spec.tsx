@@ -30,16 +30,15 @@ describe('Past', () => {
     expect(getByText(/"How it's going"/i)).toBeTruthy();
   });
 
-  it('should have a link to the archive', () => {
-    const { getByText } = render(
+  it('should render the decommission notice for the PHP archive', () => {
+    const { getByText, queryByRole } = render(
       <MemoryRouter>
         <Past />
       </MemoryRouter>
     );
-    const archiveLink = getByText(/Blast Me to the Past!/i).closest('a');
-    expect(archiveLink?.getAttribute('href')).toBe('https://philipantin.com/archive');
-    expect(archiveLink?.getAttribute('target')).toBe('_blank');
-    expect(archiveLink?.getAttribute('rel')).toBe('noopener noreferrer');
+    expect(getByText(/PHP2Shell/i)).toBeTruthy();
+    const archiveButton = queryByRole('link', { name: /Blast Me to the Past!/i });
+    expect(archiveButton).toBeNull();
   });
 
   it('should render the Back button', () => {
