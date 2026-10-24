@@ -66,7 +66,7 @@
     "startedText": "This website started in 2018, when Philip was first transitioning his career from education to software engineering. He hand-coded it using PHP, adapting a template from an HTML and CSS course that he took to gain basic skills.",
     "goingTitle": "\"How it's going\"",
     "goingText": "Philip heavily revised the site in 2026.<br />It now uses an Angular shell and header as a microfrontend, serving React components for most of the content. State passes between the two frameworks. The monorepo codebase is managed using Nx.",
-    "archiveNotice": "Philip originally maintained a live link here to the <em>hand-coded PHP version</em> from 2018. However, in October 2026, the interactive PHP archive was permanently decommissioned after the critical upstream \"PHP2Shell\" vulnerabilities (CVE-2026-109618 and CVE-2026-109619) were announced. The original source code remains safely preserved in the GitHub repository."
+    "archiveNotice": "Philip originally maintained a live link here to the <em>hand-coded PHP version</em> from 2018. However, in October 2026, the \"PHP2Shell\" vulnerabilities induced him to take it down from a superabundance of caution. (He took all necessary remediation steps, but nonetheless decided that it wasn't worth ongoing upkeep.)"
   },
   "contact": {
     "dialogTitle": "Philip would love to hear from you!",
