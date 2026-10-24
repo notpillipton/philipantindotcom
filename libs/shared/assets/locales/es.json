@@ -66,7 +66,7 @@
     "startedText": "Este sitio web comenzó en 2018, cuando Philip estaba en plena transición profesional de la educación a la ingeniería de software. Lo programó a mano utilizando PHP, adaptando una plantilla de un curso de HTML y CSS que tomó para adquirir competencias fundamentales.",
     "goingTitle": "\"Cómo va\"",
     "goingText": "Philip rediseñó exhaustivamente el sitio en 2026.<br />Ahora utiliza un shell y encabezado en Angular como microfrontend, sirviendo componentes React para la mayor parte del contenido. El estado fluye entre ambos frameworks. La base de código monorepo se gestiona con Nx.",
-    "archiveNotice": "Philip mantenía aquí un enlace a la <em>versión en PHP programada a mano</em> de 2018. Sin embargo, en octubre de 2026, el archivo interactivo en PHP fue retirado de forma permanente tras anunciarse las vulnerabilidades críticas upstream «PHP2Shell» (CVE-2026-109618 y CVE-2026-109619). El código fuente original permanece a salvo en el repositorio de GitHub."
+    "archiveNotice": "Philip mantenía aquí un enlace a la <em>versión en PHP programada a mano</em> de 2018. Sin embargo, en octubre de 2026, las vulnerabilidades «PHP2Shell» lo motivaron a retirarla por exceso de precaución. (Tomó todas las medidas de mitigación necesarias, pero de todos modos decidió que no valía la pena el mantenimiento continuo)."
   },
   "contact": {
     "dialogTitle": "¡A Philip le encantaría saber de ti!",
